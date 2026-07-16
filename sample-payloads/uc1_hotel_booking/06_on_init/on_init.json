@@ -1,0 +1,316 @@
+{
+  "context": {
+    "networkId": "nfh.global/testnet",
+    "action": "on_init",
+    "version": "2.0.0",
+    "transactionId": "a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+    "messageId": "c3d4e5f6-0006-4012-8a00-ef5678901abc",
+    "timestamp": "2026-07-15T09:09:00.000Z",
+    "bapId": "bap.example.com",
+    "bapUri": "http://onix-bap:8081/bap/receiver",
+    "bppId": "bpp.example.com",
+    "bppUri": "http://onix-bpp:8082/bpp/receiver"
+  },
+  "message": {
+    "contract": {
+      "id": "contract-ont-hb-a1b2c3d4",
+      "status": {
+        "code": "DRAFT"
+      },
+      "commitments": [
+        {
+          "id": "commitment-ont-hb-001",
+          "status": {
+            "descriptor": {
+              "code": "DRAFT"
+            }
+          },
+          "resources": [
+            {
+              "id": "res-ont-hotel-grandparis-001",
+              "quantity": {
+                "count": 1
+              },
+              "descriptor": {
+                "name": "Grand Paris Hotel",
+                "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001"
+              },
+              "resourceAttributes": {
+                "@context": "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
+                "@type": "hr:HotelResource",
+                "hotelId": "GPH-PAR-001",
+                "staticId": "hotel-grand-paris-001",
+                "name": "Grand Paris Hotel",
+                "starRating": 4,
+                "address": {
+                  "street": "15 Rue de Rivoli",
+                  "city": "Paris",
+                  "cityCode": "PAR",
+                  "country": "France",
+                  "countryCode": "FR",
+                  "postalCode": "75001",
+                  "latitude": 48.86,
+                  "longitude": 2.348
+                },
+                "amenities": [
+                  "Free WiFi",
+                  "Swimming Pool",
+                  "Spa",
+                  "Restaurant",
+                  "Bar",
+                  "Gym",
+                  "Concierge",
+                  "24-hour Front Desk"
+                ],
+                "images": [
+                  {
+                    "type": "THUMBNAIL",
+                    "url": "https://media.example-ota.com/hotels/gph/thumb.jpg"
+                  },
+                  {
+                    "type": "FULL",
+                    "url": "https://media.example-ota.com/hotels/gph/main.jpg"
+                  }
+                ],
+                "contact": {
+                  "phone": "+33-1-4012-3456",
+                  "email": "reservations@grandparishotel.example.com",
+                  "website": "https://grandparishotel.example.com"
+                }
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-ont-gph-dfr-bb-flex-001",
+            "resourceIds": [
+              "res-ont-hotel-grandparis-001"
+            ],
+            "descriptor": {
+              "name": "Deluxe Family Room \u2014 B&B Flexible",
+              "shortDesc": "Deluxe Family Room with Breakfast, free cancellation until 14 Aug 2026"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "GPH-DFR-BB-FLEX-2N",
+              "roomCategory": "Deluxe Family Room",
+              "bedType": "1 King Bed + 1 Sofa Bed",
+              "maxOccupancy": {
+                "adults": 2,
+                "children": 2
+              },
+              "mealBasis": {
+                "code": "BB",
+                "description": "Bed & Breakfast"
+              },
+              "refundable": true,
+              "totalPrice": {
+                "amount": 500.0,
+                "currency": "EUR"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 250.0,
+                    "currency": "EUR"
+                  }
+                },
+                {
+                  "date": "2026-08-16",
+                  "price": {
+                    "amount": 250.0,
+                    "currency": "EUR"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-15T09:00:00Z",
+                  "endDatetime": "2026-08-14T21:59:59Z",
+                  "charge": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                  },
+                  "description": "Free cancellation"
+                },
+                {
+                  "startDatetime": "2026-08-15T00:00:00Z",
+                  "endDatetime": "2026-08-17T12:00:00Z",
+                  "charge": {
+                    "amount": 500.0,
+                    "currency": "EUR"
+                  },
+                  "description": "100% of total booking amount \u2014 non-refundable from check-in"
+                }
+              ],
+              "sessionIdentifier": "sess-ont-hb-a1b2c3d4",
+              "sessionExpiresAt": "2026-07-15T09:20:00Z"
+            }
+          }
+        }
+      ],
+      "consideration": [
+        {
+          "id": "cons-ont-hb-room-001",
+          "considerationAttributes": {
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
+            "@type": "PriceSpecification",
+            "price": 500.0,
+            "priceCurrency": "EUR",
+            "description": "Total for 2 nights \u2014 Deluxe Family Room with Breakfast",
+            "valueAddedTaxIncluded": false,
+            "nightlyRate": 250.0,
+            "paymentSchedule": "UPFRONT",
+            "selectedPaymentMethod": "CREDIT_CARD",
+            "paymentGatewayUrl": "https://pay.example-psp.com/checkout/ont-hb-a1b2c3d4",
+            "paymentReference": "pay-intent-ont-hb-a1b2c3d4",
+            "paymentDeadline": "2026-07-15T09:25:00Z"
+          },
+          "status": {
+            "code": "QUOTED"
+          }
+        }
+      ],
+      "participants": [
+        {
+          "id": "part-ont-hb-traveller-001",
+          "role": "BOOKER",
+          "descriptor": {
+            "name": "Sarah Johnson",
+            "shortDesc": "Lead guest and booker \u2014 US national travelling to France"
+          }
+        },
+        {
+          "id": "part-ont-hb-otrams-001",
+          "role": "PROVIDER",
+          "descriptor": {
+            "name": "Grand Paris Hotel via OTRAMS",
+            "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001 \u2014 GPH-PAR-001"
+          }
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
+        "@type": "gm:GuestManifest",
+        "agentReference": "REF-SJ-2026-0815-001",
+        "stay": {
+          "checkIn": "2026-08-15",
+          "checkOut": "2026-08-17",
+          "nights": 2
+        },
+        "rooms": [
+          {
+            "roomSequence": 1,
+            "guests": [
+              {
+                "guestSequence": 1,
+                "salutation": "Ms",
+                "firstName": "Sarah",
+                "lastName": "Johnson",
+                "guestType": "ADULT",
+                "isLeadGuest": true,
+                "contact": {
+                  "phone": "+1-415-555-0198",
+                  "email": "sarah.johnson@example.com"
+                }
+              },
+              {
+                "guestSequence": 2,
+                "salutation": "Mr",
+                "firstName": "James",
+                "lastName": "Johnson",
+                "guestType": "ADULT",
+                "isLeadGuest": false
+              },
+              {
+                "guestSequence": 3,
+                "salutation": "Miss",
+                "firstName": "Emma",
+                "lastName": "Johnson",
+                "guestType": "CHILD",
+                "age": 7,
+                "isLeadGuest": false
+              }
+            ]
+          }
+        ],
+        "specialRequest": "High-floor room preferred. Baby cot requested.",
+        "specialRequestDisclaimer": "Special requests are noted but cannot be guaranteed. Subject to availability at check-in.",
+        "consentArtifact": {
+          "consentId": "consent-ont-hb-sj-001",
+          "subject": "Sarah Johnson, James Johnson, Emma Johnson (age 7)",
+          "purpose": "Fulfilment of hotel stay \u2014 Grand Paris Hotel, Paris, 15\u201317 Aug 2026",
+          "scope": [
+            "GUEST_MANIFEST",
+            "CONTACT_DETAILS"
+          ],
+          "grantedAt": "2026-07-15T09:05:00Z",
+          "expiresAt": "2026-08-17T15:00:00Z",
+          "mechanism": "EXPLICIT_CLICK_THROUGH",
+          "mediator": "CN Seeker App \u2014 cn.seeker.ont.example.com"
+        },
+        "cancellationPolicy": {
+          "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
+          "@type": "cp:CancellationPolicy",
+          "refundabilityText": "Refundable \u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
+          "deadlineWindows": [
+            {
+              "startDatetime": "2026-07-15T09:00:00Z",
+              "endDatetime": "2026-08-14T21:59:59Z",
+              "charge": {
+                "amount": 0.0,
+                "currency": "EUR"
+              },
+              "description": "Free cancellation"
+            },
+            {
+              "startDatetime": "2026-08-15T00:00:00Z",
+              "endDatetime": "2026-08-17T12:00:00Z",
+              "charge": {
+                "amount": 500.0,
+                "currency": "EUR"
+              },
+              "description": "100% of total booking amount \u2014 non-refundable from check-in"
+            }
+          ],
+          "amendmentPolicy": "Date changes subject to rate-plan availability; rate difference applies.",
+          "noShowPolicy": "Full amount charged. No refund.",
+          "priceIntegrity": {
+            "priceChanged": false,
+            "previousPrice": {
+              "amount": 500.0,
+              "currency": "EUR"
+            },
+            "currentPrice": {
+              "amount": 500.0,
+              "currency": "EUR"
+            },
+            "priceDifference": {
+              "amount": 0.0,
+              "currency": "EUR"
+            }
+          },
+          "bookingAllowed": true,
+          "soldOut": false,
+          "propertyCollectedFees": [
+            {
+              "description": "City Tax (Taxe de s\u00e9jour)",
+              "amount": 3.5,
+              "currency": "EUR",
+              "perPersonPerNight": true,
+              "collectedBy": "PROPERTY"
+            }
+          ],
+          "contractRemarks": "City tax of EUR 3.50 per person per night is payable directly at the hotel upon check-in. Valid photo ID required at check-in."
+        },
+        "escrowDetails": {
+          "settlementRail": "Finternet",
+          "escrowCondition": "Released to property upon verified check-out completion",
+          "fxApplicable": true,
+          "settlementCurrency": "EUR"
+        }
+      }
+    }
+  }
+}

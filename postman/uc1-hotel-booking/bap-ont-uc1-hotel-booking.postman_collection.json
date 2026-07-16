@@ -1,0 +1,286 @@
+{
+  "info": {
+    "_postman_id": "c1a2b3c4-d5e6-4f78-9a0b-c1d2e3f4a5b6",
+    "name": "BAP:ONT UC1 \u2014 Hotel Booking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 \u00b7 discover",
+      "item": [
+        {
+          "name": "01 \u00b7 discover",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"discover\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"schemaContext\": [\n      \"https://schema.beckn.io/HotelResource/v0.1/context.jsonld\",\n      \"https://schema.beckn.io/HotelOffer/v0.1/context.jsonld\"\n    ]\n  },\n  \"message\": {\n    \"intent\": {\n      \"textSearch\": \"4-star or 5-star hotel in Paris for 2 adults and 1 child\",\n      \"filters\": {\n        \"type\": \"jsonpath\",\n        \"expression\": \"$.catalogs[*].resources[*] ? (@.resourceAttributes.address.countryCode == \\\"FR\\\" && @.resourceAttributes.address.cityCode == \\\"PAR\\\" && @.resourceAttributes.starRating >= 4)\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/discover",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "discover"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 \u00b7 select",
+      "item": [
+        {
+          "name": "03 \u00b7 select",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"select\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\"\n  },\n  \"message\": {\n    \"contract\": {\n      \"status\": {\n        \"code\": \"DRAFT\"\n      },\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"DRAFT\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ],\n      \"participants\": [\n        {\n          \"id\": \"part-ont-hb-traveller-001\"\n        }\n      ],\n      \"contractAttributes\": {\n        \"@context\": \"https://schema.beckn.io/HotelSearchIntent/v0.1/context.jsonld\",\n        \"@type\": \"hsi:HotelSearchContext\",\n        \"searchSession\": {\n          \"id\": \"sess-ont-hb-a1b2c3d4\",\n          \"expiresAt\": \"2026-07-15T09:20:00Z\"\n        },\n        \"stay\": {\n          \"checkIn\": \"2026-08-15\",\n          \"checkOut\": \"2026-08-17\",\n          \"nights\": 2\n        },\n        \"rooms\": [\n          {\n            \"adults\": 2,\n            \"children\": 1,\n            \"childAges\": [\n              7\n            ]\n          }\n        ],\n        \"nationality\": {\n          \"code\": \"US\",\n          \"name\": \"United States\"\n        },\n        \"countryOfResidence\": {\n          \"code\": \"US\",\n          \"name\": \"United States\"\n        },\n        \"currency\": \"EUR\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/select",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "select"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 \u00b7 init",
+      "item": [
+        {
+          "name": "05 \u00b7 init",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"init\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\"\n  },\n  \"message\": {\n    \"contract\": {\n      \"id\": \"contract-ont-hb-a1b2c3d4\",\n      \"status\": {\n        \"code\": \"DRAFT\"\n      },\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"DRAFT\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ],\n      \"consideration\": [\n        {\n          \"id\": \"cons-ont-hb-room-001\",\n          \"considerationAttributes\": {\n            \"@context\": \"https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld\",\n            \"@type\": \"PriceSpecification\",\n            \"price\": 500.0,\n            \"priceCurrency\": \"EUR\",\n            \"description\": \"Total for 2 nights \\u2014 Deluxe Family Room with Breakfast\",\n            \"valueAddedTaxIncluded\": false,\n            \"nightlyRate\": 250.0,\n            \"paymentSchedule\": \"UPFRONT\",\n            \"selectedPaymentMethod\": \"CREDIT_CARD\"\n          },\n          \"status\": {\n            \"code\": \"PENDING\"\n          }\n        }\n      ],\n      \"participants\": [\n        {\n          \"id\": \"part-ont-hb-traveller-001\",\n          \"role\": \"BOOKER\",\n          \"descriptor\": {\n            \"name\": \"Sarah Johnson\",\n            \"shortDesc\": \"Lead guest and booker \\u2014 US national travelling to France\"\n          }\n        },\n        {\n          \"id\": \"part-ont-hb-otrams-001\",\n          \"role\": \"PROVIDER\",\n          \"descriptor\": {\n            \"name\": \"Grand Paris Hotel via OTRAMS\",\n            \"shortDesc\": \"4-star hotel \\u2014 15 Rue de Rivoli, Paris 75001 \\u2014 GPH-PAR-001\"\n          }\n        }\n      ],\n      \"contractAttributes\": {\n        \"@context\": \"https://schema.beckn.io/GuestManifest/v0.1/context.jsonld\",\n        \"@type\": \"gm:GuestManifest\",\n        \"agentReference\": \"REF-SJ-2026-0815-001\",\n        \"stay\": {\n          \"checkIn\": \"2026-08-15\",\n          \"checkOut\": \"2026-08-17\",\n          \"nights\": 2\n        },\n        \"rooms\": [\n          {\n            \"roomSequence\": 1,\n            \"guests\": [\n              {\n                \"guestSequence\": 1,\n                \"salutation\": \"Ms\",\n                \"firstName\": \"Sarah\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"ADULT\",\n                \"isLeadGuest\": true,\n                \"contact\": {\n                  \"phone\": \"+1-415-555-0198\",\n                  \"email\": \"sarah.johnson@example.com\"\n                }\n              },\n              {\n                \"guestSequence\": 2,\n                \"salutation\": \"Mr\",\n                \"firstName\": \"James\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"ADULT\",\n                \"isLeadGuest\": false\n              },\n              {\n                \"guestSequence\": 3,\n                \"salutation\": \"Miss\",\n                \"firstName\": \"Emma\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"CHILD\",\n                \"age\": 7,\n                \"isLeadGuest\": false\n              }\n            ]\n          }\n        ],\n        \"specialRequest\": \"High-floor room preferred. Baby cot requested.\",\n        \"specialRequestDisclaimer\": \"Special requests are noted but cannot be guaranteed. Subject to availability at check-in.\",\n        \"consentArtifact\": {\n          \"consentId\": \"consent-ont-hb-sj-001\",\n          \"subject\": \"Sarah Johnson, James Johnson, Emma Johnson (age 7)\",\n          \"purpose\": \"Fulfilment of hotel stay \\u2014 Grand Paris Hotel, Paris, 15\\u201317 Aug 2026\",\n          \"scope\": [\n            \"GUEST_MANIFEST\",\n            \"CONTACT_DETAILS\"\n          ],\n          \"grantedAt\": \"2026-07-15T09:05:00Z\",\n          \"expiresAt\": \"2026-08-17T15:00:00Z\",\n          \"mechanism\": \"EXPLICIT_CLICK_THROUGH\",\n          \"mediator\": \"CN Seeker App \\u2014 cn.seeker.ont.example.com\"\n        }\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/init",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "init"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 \u00b7 confirm",
+      "item": [
+        {
+          "name": "07 \u00b7 confirm",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"confirm\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\"\n  },\n  \"message\": {\n    \"contract\": {\n      \"id\": \"contract-ont-hb-a1b2c3d4\",\n      \"status\": {\n        \"code\": \"ACTIVE\"\n      },\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"DRAFT\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ],\n      \"consideration\": [\n        {\n          \"id\": \"cons-ont-hb-room-001\",\n          \"considerationAttributes\": {\n            \"@context\": \"https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld\",\n            \"@type\": \"PriceSpecification\",\n            \"price\": 500.0,\n            \"priceCurrency\": \"EUR\",\n            \"description\": \"Total for 2 nights \\u2014 Deluxe Family Room with Breakfast\",\n            \"valueAddedTaxIncluded\": false,\n            \"nightlyRate\": 250.0,\n            \"paymentSchedule\": \"UPFRONT\",\n            \"selectedPaymentMethod\": \"CREDIT_CARD\",\n            \"transactionRef\": \"pay-txn-ont-hb-a1b2c3d4-cc\",\n            \"paymentAuthorisation\": {\n              \"authCode\": \"AUTH-XYZ-20260715-0912\",\n              \"authProvider\": \"STRIPE_EU\",\n              \"authTimestamp\": \"2026-07-15T09:12:00Z\",\n              \"authAmount\": 500.0,\n              \"authCurrency\": \"EUR\"\n            }\n          },\n          \"status\": {\n            \"code\": \"ACTIVE\"\n          }\n        }\n      ],\n      \"participants\": [\n        {\n          \"id\": \"part-ont-hb-traveller-001\",\n          \"role\": \"BOOKER\",\n          \"descriptor\": {\n            \"name\": \"Sarah Johnson\",\n            \"shortDesc\": \"Lead guest and booker \\u2014 US national travelling to France\"\n          }\n        },\n        {\n          \"id\": \"part-ont-hb-otrams-001\",\n          \"role\": \"PROVIDER\",\n          \"descriptor\": {\n            \"name\": \"Grand Paris Hotel via OTRAMS\",\n            \"shortDesc\": \"4-star hotel \\u2014 15 Rue de Rivoli, Paris 75001 \\u2014 GPH-PAR-001\"\n          }\n        }\n      ],\n      \"contractAttributes\": {\n        \"@context\": \"https://schema.beckn.io/GuestManifest/v0.1/context.jsonld\",\n        \"@type\": \"gm:GuestManifest\",\n        \"agentReference\": \"REF-SJ-2026-0815-001\",\n        \"stay\": {\n          \"checkIn\": \"2026-08-15\",\n          \"checkOut\": \"2026-08-17\",\n          \"nights\": 2\n        },\n        \"rooms\": [\n          {\n            \"roomSequence\": 1,\n            \"guests\": [\n              {\n                \"guestSequence\": 1,\n                \"salutation\": \"Ms\",\n                \"firstName\": \"Sarah\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"ADULT\",\n                \"isLeadGuest\": true,\n                \"contact\": {\n                  \"phone\": \"+1-415-555-0198\",\n                  \"email\": \"sarah.johnson@example.com\"\n                }\n              },\n              {\n                \"guestSequence\": 2,\n                \"salutation\": \"Mr\",\n                \"firstName\": \"James\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"ADULT\",\n                \"isLeadGuest\": false\n              },\n              {\n                \"guestSequence\": 3,\n                \"salutation\": \"Miss\",\n                \"firstName\": \"Emma\",\n                \"lastName\": \"Johnson\",\n                \"guestType\": \"CHILD\",\n                \"age\": 7,\n                \"isLeadGuest\": false\n              }\n            ]\n          }\n        ],\n        \"specialRequest\": \"High-floor room preferred. Baby cot requested.\",\n        \"specialRequestDisclaimer\": \"Special requests are noted but cannot be guaranteed. Subject to availability at check-in.\",\n        \"consentArtifact\": {\n          \"consentId\": \"consent-ont-hb-sj-001\",\n          \"subject\": \"Sarah Johnson, James Johnson, Emma Johnson (age 7)\",\n          \"purpose\": \"Fulfilment of hotel stay \\u2014 Grand Paris Hotel, Paris, 15\\u201317 Aug 2026\",\n          \"scope\": [\n            \"GUEST_MANIFEST\",\n            \"CONTACT_DETAILS\"\n          ],\n          \"grantedAt\": \"2026-07-15T09:05:00Z\",\n          \"expiresAt\": \"2026-08-17T15:00:00Z\",\n          \"mechanism\": \"EXPLICIT_CLICK_THROUGH\",\n          \"mediator\": \"CN Seeker App \\u2014 cn.seeker.ont.example.com\"\n        },\n        \"cancellationPolicy\": {\n          \"@context\": \"https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld\",\n          \"@type\": \"cp:CancellationPolicy\",\n          \"refundabilityText\": \"Refundable \\u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.\",\n          \"deadlineWindows\": [\n            {\n              \"startDatetime\": \"2026-07-15T09:00:00Z\",\n              \"endDatetime\": \"2026-08-14T21:59:59Z\",\n              \"charge\": {\n                \"amount\": 0.0,\n                \"currency\": \"EUR\"\n              },\n              \"description\": \"Free cancellation\"\n            },\n            {\n              \"startDatetime\": \"2026-08-15T00:00:00Z\",\n              \"endDatetime\": \"2026-08-17T12:00:00Z\",\n              \"charge\": {\n                \"amount\": 500.0,\n                \"currency\": \"EUR\"\n              },\n              \"description\": \"100% of total booking amount \\u2014 non-refundable from check-in\"\n            }\n          ],\n          \"amendmentPolicy\": \"Date changes subject to rate-plan availability; rate difference applies.\",\n          \"noShowPolicy\": \"Full amount charged. No refund.\",\n          \"priceIntegrity\": {\n            \"priceChanged\": false,\n            \"previousPrice\": {\n              \"amount\": 500.0,\n              \"currency\": \"EUR\"\n            },\n            \"currentPrice\": {\n              \"amount\": 500.0,\n              \"currency\": \"EUR\"\n            },\n            \"priceDifference\": {\n              \"amount\": 0.0,\n              \"currency\": \"EUR\"\n            }\n          },\n          \"bookingAllowed\": true,\n          \"soldOut\": false,\n          \"propertyCollectedFees\": [\n            {\n              \"description\": \"City Tax (Taxe de s\\u00e9jour)\",\n              \"amount\": 3.5,\n              \"currency\": \"EUR\",\n              \"perPersonPerNight\": true,\n              \"collectedBy\": \"PROPERTY\"\n            }\n          ],\n          \"contractRemarks\": \"City tax of EUR 3.50 per person per night is payable directly at the hotel upon check-in. Valid photo ID required at check-in.\"\n        },\n        \"expectedTotalAmount\": {\n          \"amount\": 500.0,\n          \"currency\": \"EUR\"\n        }\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/confirm",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09 \u00b7 status",
+      "item": [
+        {
+          "name": "09 \u00b7 status",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"status\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\"\n  },\n  \"message\": {\n    \"contract\": {\n      \"id\": \"contract-ont-hb-a1b2c3d4\",\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"ACTIVE\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/status",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "11 \u00b7 cancel \u2014 Quote (try=true)",
+      "item": [
+        {
+          "name": "11 \u00b7 cancel \u2014 Quote (try=true)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"cancel\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\",\n    \"try\": true\n  },\n  \"message\": {\n    \"contract\": {\n      \"id\": \"contract-ont-hb-a1b2c3d4\",\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"ACTIVE\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/cancel",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "13 \u00b7 cancel \u2014 Commit (try=false)",
+      "item": [
+        {
+          "name": "13 \u00b7 cancel \u2014 Commit (try=false)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"networkId\": \"{{networkId}}\",\n    \"action\": \"cancel\",\n    \"version\": \"{{version}}\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"messageId\": \"{{$guid}}\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"bapId\": \"{{bapId}}\",\n    \"bapUri\": \"{{bapUri}}\",\n    \"bppId\": \"{{bppId}}\",\n    \"bppUri\": \"{{bppUri}}\",\n    \"try\": false,\n    \"requestDigest\": {\n      \"digest\": \"BLAKE-512=f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/fw==\"\n    }\n  },\n  \"message\": {\n    \"contract\": {\n      \"id\": \"contract-ont-hb-a1b2c3d4\",\n      \"commitments\": [\n        {\n          \"id\": \"commitment-ont-hb-001\",\n          \"status\": {\n            \"descriptor\": {\n              \"code\": \"ACTIVE\"\n            }\n          },\n          \"resources\": [\n            {\n              \"id\": \"res-ont-hotel-grandparis-001\",\n              \"quantity\": {\n                \"count\": 1\n              }\n            }\n          ],\n          \"offer\": {\n            \"id\": \"offer-ont-gph-dfr-bb-flex-001\",\n            \"resourceIds\": [\n              \"res-ont-hotel-grandparis-001\"\n            ]\n          }\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{bap_adapter_url}}/cancel",
+              "host": [
+                "{{bap_adapter_url}}"
+              ],
+              "path": [
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "networkId",
+      "value": "nfh.global/testnet"
+    },
+    {
+      "key": "version",
+      "value": "2.0.0"
+    },
+    {
+      "key": "bapId",
+      "value": "bap.example.com"
+    },
+    {
+      "key": "bapUri",
+      "value": "http://onix-bap:8081/bap/receiver"
+    },
+    {
+      "key": "bppId",
+      "value": "bpp.example.com"
+    },
+    {
+      "key": "bppUri",
+      "value": "http://onix-bpp:8082/bpp/receiver"
+    },
+    {
+      "key": "transactionId",
+      "value": "a1b2c3d4-e5f6-4789-abcd-ef0123456789"
+    },
+    {
+      "key": "bap_adapter_url",
+      "value": "http://localhost:8081/bap/caller"
+    },
+    {
+      "key": "bpp_adapter_url",
+      "value": "http://localhost:8082/bpp/caller"
+    }
+  ]
+}

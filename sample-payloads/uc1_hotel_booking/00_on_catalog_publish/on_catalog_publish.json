@@ -1,0 +1,29 @@
+{
+  "context": {
+    "networkId": "nfh.global/testnet",
+    "action": "catalog/on_publish",
+    "version": "2.0.0",
+    "transactionId": "a1b2c3d4-e5f6-4789-abcd-ef0123456789",
+    "messageId": "c3d4e5f6-0000-4012-8a01-ef5678901abc",
+    "timestamp": "2026-07-15T08:56:00.000Z",
+    "bppId": "bpp.example.com",
+    "bppUri": "http://onix-bpp:8082/bpp/receiver",
+    "schemaContext": [
+      "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
+      "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld"
+    ]
+  },
+  "message": {
+    "results": [
+      {
+        "catalogId": "cat-ont-otrams-paris-001",
+        "status": "ACCEPTED",
+        "stats": {
+          "itemCount": 1,
+          "providerCount": 1,
+          "categoryCount": 1
+        }
+      }
+    ]
+  }
+}
