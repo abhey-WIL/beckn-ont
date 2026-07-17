@@ -1,0 +1,22 @@
+{
+  "id": "https://schema.beckn.io/GuestManifest/v0.1",
+  "name": "GuestManifest",
+  "version": "0.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "GuestManifest"
+  ],
+  "beckn_container": "contractAttributes",
+  "discovery_fields": [],
+  "indexable_paths": [],
+  "filterable_paths": [],
+  "sortable_paths": [],
+  "privacy_notes": [
+    "All fields are PII \u2014 MUST NOT appear before init stage.",
+    "rooms[*].guests[*]: salutation, firstName, lastName are PII \u2014 init and later only.",
+    "rooms[*].guests[*].age: required for children, PII.",
+    "rooms[*].guests[*].contact: lead guest contact details, PII.",
+    "consentArtifact.subject: contains guest names, PII."
+  ]
+}

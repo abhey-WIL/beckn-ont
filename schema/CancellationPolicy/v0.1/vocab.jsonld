@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "cp": "https://schema.beckn.io/CancellationPolicy#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "CancellationPolicy": "cp:CancellationPolicy"
+  },
+  "@graph": [
+    {
+      "@id": "cp:CancellationPolicy",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Cancellation Policy",
+      "rdfs:comment": "Binding cancellation policy for a confirmed or pre-commit hotel booking. Returned in on_select (binding terms before com"
+    }
+  ]
+}

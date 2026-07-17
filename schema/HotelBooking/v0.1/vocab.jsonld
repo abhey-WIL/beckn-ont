@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "hb": "https://schema.beckn.io/HotelBooking#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "HotelBooking": "hb:HotelBooking"
+  },
+  "@graph": [
+    {
+      "@id": "hb:HotelBooking",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Hotel Booking",
+      "rdfs:comment": "Booking confirmation and lifecycle attributes carried in contractAttributes from on_confirm onwards. Records the booking"
+    },
+    {
+      "@id": "hb:VOUCHERED",
+      "@type": "hb:HotelBooking",
+      "rdfs:label": "Vouchered"
+    },
+    {
+      "@id": "hb:ON_REQUEST",
+      "@type": "hb:HotelBooking",
+      "rdfs:label": "On Request"
+    },
+    {
+      "@id": "hb:FAILED",
+      "@type": "hb:HotelBooking",
+      "rdfs:label": "Failed"
+    },
+    {
+      "@id": "hb:CANCELLED",
+      "@type": "hb:HotelBooking",
+      "rdfs:label": "Cancelled"
+    },
+    {
+      "@id": "hb:COMPLETED",
+      "@type": "hb:HotelBooking",
+      "rdfs:label": "Completed"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "PriceSpecification",
+  "version": "0.1.0",
+  "card_template": "{{price}} {{priceCurrency}} \u00b7 {{paymentSchedule}}",
+  "detail_template": "Price: {{price}} {{priceCurrency}}\nPayment: {{selectedPaymentMethod}} \u00b7 {{paymentSchedule}}\nVAT included: {{valueAddedTaxIncluded}}"
+}

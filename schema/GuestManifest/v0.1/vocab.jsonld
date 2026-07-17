@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "gm": "https://schema.beckn.io/GuestManifest#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "GuestManifest": "gm:GuestManifest"
+  },
+  "@graph": [
+    {
+      "@id": "gm:GuestManifest",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Guest Manifest",
+      "rdfs:comment": "Per-room guest details shared with the confirmed provider under explicit, purpose-bound consent. Appears from the init p"
+    }
+  ]
+}

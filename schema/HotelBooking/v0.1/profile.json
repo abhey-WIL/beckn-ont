@@ -1,0 +1,22 @@
+{
+  "id": "https://schema.beckn.io/HotelBooking/v0.1",
+  "name": "HotelBooking",
+  "version": "0.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HotelBooking"
+  ],
+  "beckn_container": "contractAttributes",
+  "discovery_fields": [],
+  "indexable_paths": [],
+  "filterable_paths": [
+    "bookingStatus"
+  ],
+  "sortable_paths": [
+    "bookingDate"
+  ],
+  "privacy_notes": [
+    "When embedded GuestManifest fields are present, they are PII \u2014 init stage and later only."
+  ]
+}

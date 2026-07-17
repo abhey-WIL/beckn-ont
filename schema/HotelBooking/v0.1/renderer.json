@@ -1,0 +1,6 @@
+{
+  "schema": "HotelBooking",
+  "version": "0.1.0",
+  "card_template": "{{bookingReference}} \u00b7 {{bookingStatus}} \u00b7 {{stay.checkIn}} \u2013 {{stay.checkOut}}",
+  "detail_template": "Ref: {{bookingReference}}\nStatus: {{bookingStatus}}\nStay: {{stay.checkIn}} \u2013 {{stay.checkOut}}\nTotal: {{totalAmount.amount}} {{totalAmount.currency}}"
+}

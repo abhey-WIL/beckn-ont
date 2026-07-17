@@ -1,0 +1,33 @@
+{
+  "id": "https://schema.beckn.io/HotelResource/v0.1",
+  "name": "HotelResource",
+  "version": "0.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HotelResource"
+  ],
+  "beckn_container": "resourceAttributes",
+  "discovery_fields": [
+    "name",
+    "starRating",
+    "address",
+    "amenities",
+    "images"
+  ],
+  "indexable_paths": [
+    "starRating",
+    "address.countryCode",
+    "address.cityCode"
+  ],
+  "filterable_paths": [
+    "starRating",
+    "address.countryCode",
+    "address.cityCode"
+  ],
+  "sortable_paths": [
+    "starRating",
+    "name"
+  ],
+  "privacy_notes": []
+}

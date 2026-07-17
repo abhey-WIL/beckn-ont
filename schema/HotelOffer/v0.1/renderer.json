@@ -1,0 +1,6 @@
+{
+  "schema": "HotelOffer",
+  "version": "0.1.0",
+  "card_template": "{{roomCategory}} \u00b7 {{mealBasis.code}} \u00b7 {{refundable ? 'Refundable' : 'Non-refundable'}} \u00b7 {{totalPrice.amount}} {{totalPrice.currency}}",
+  "detail_template": "{{roomCategory}} ({{bedType}})\nMeal: {{mealBasis.description}}\nTotal: {{totalPrice.amount}} {{totalPrice.currency}}\nRefundable: {{refundable}}"
+}

@@ -1,0 +1,6 @@
+{
+  "schema": "CancellationPolicy",
+  "version": "0.1.0",
+  "card_template": "{{refundabilityText}} \u00b7 Booking allowed: {{bookingAllowed}}",
+  "detail_template": "Refundability: {{refundabilityText}}\nBooking allowed: {{bookingAllowed}}\nSold out: {{soldOut}}\nPrice changed: {{priceIntegrity.priceChanged}}"
+}

@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
+  "@type": "hb:HotelBooking",
+  "bookingStatus": "VOUCHERED",
+  "bookingReference": "BK-ONT-2026-080123",
+  "agentReference": "REF-SJ-2026-0815-001",
+  "bookingDate": "2026-07-15",
+  "cancellationDeadline": "2026-08-14T21:59:59Z",
+  "confirmationNumbers": {
+    "networkConfirmationNumber": "BK-ONT-2026-080123",
+    "hotelConfirmationNumber": "GPH-RES-20260715-4821"
+  },
+  "escrowDetails": {
+    "settlementRail": "Finternet",
+    "escrowCondition": "Released on verified check-out",
+    "fxApplicable": true,
+    "settlementCurrency": "EUR",
+    "escrowReference": "finternet-escrow-ont-hb-a1b2c3d4",
+    "escrowStatus": "HELD"
+  },
+  "stay": {
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-17",
+    "nights": 2
+  },
+  "property": {
+    "hotelId": "GPH-PAR-001",
+    "name": "Grand Paris Hotel",
+    "address": "15 Rue de Rivoli, Paris 75001, France",
+    "phone": "+33-1-4012-3456"
+  },
+  "totalAmount": {
+    "amount": 500.0,
+    "currency": "EUR"
+  }
+}

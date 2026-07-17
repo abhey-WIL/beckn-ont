@@ -1,0 +1,6 @@
+{
+  "schema": "GuestManifest",
+  "version": "0.1.0",
+  "card_template": "Agent ref: {{agentReference}} \u00b7 {{stay.checkIn}} \u2013 {{stay.checkOut}}",
+  "detail_template": "Agent reference: {{agentReference}}\nStay: {{stay.checkIn}} \u2013 {{stay.checkOut}}\nConsent: {{consentArtifact.mechanism}} granted {{consentArtifact.grantedAt}}"
+}

@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
+  "@type": "gm:GuestManifest",
+  "agentReference": "REF-SJ-2026-0815-001",
+  "stay": {
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-17",
+    "nights": 2
+  },
+  "rooms": [
+    {
+      "roomSequence": 1,
+      "guests": [
+        {
+          "guestSequence": 1,
+          "salutation": "Ms",
+          "firstName": "Sarah",
+          "lastName": "Johnson",
+          "guestType": "ADULT",
+          "isLeadGuest": true,
+          "contact": {
+            "phone": "+1-415-555-0198",
+            "email": "sarah.johnson@example.com"
+          }
+        },
+        {
+          "guestSequence": 2,
+          "salutation": "Mr",
+          "firstName": "James",
+          "lastName": "Johnson",
+          "guestType": "ADULT",
+          "isLeadGuest": false
+        },
+        {
+          "guestSequence": 3,
+          "salutation": "Miss",
+          "firstName": "Emma",
+          "lastName": "Johnson",
+          "guestType": "CHILD",
+          "age": 7,
+          "isLeadGuest": false
+        }
+      ]
+    }
+  ],
+  "specialRequest": "High-floor room preferred. Baby cot requested.",
+  "specialRequestDisclaimer": "Special requests are noted but cannot be guaranteed.",
+  "consentArtifact": {
+    "consentId": "consent-ont-hb-sj-001",
+    "subject": "Sarah Johnson, James Johnson, Emma Johnson (age 7)",
+    "purpose": "Fulfilment of hotel stay \u2014 Grand Paris Hotel, Paris, 15\u201317 Aug 2026",
+    "scope": [
+      "GUEST_MANIFEST",
+      "CONTACT_DETAILS"
+    ],
+    "grantedAt": "2026-07-15T09:05:00Z",
+    "expiresAt": "2026-08-17T15:00:00Z",
+    "mechanism": "EXPLICIT_CLICK_THROUGH",
+    "mediator": "CN Seeker App \u2014 bap.example.com"
+  }
+}

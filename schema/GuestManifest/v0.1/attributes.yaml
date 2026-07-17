@@ -1,0 +1,156 @@
+openapi: 3.1.1
+$id: https://schema.beckn.io/GuestManifest/v0.1/attributes.yaml
+info:
+  title: GuestManifest
+  version: 0.1.0
+  description: Per-room guest details shared with the confirmed provider under explicit,
+    purpose-bound consent. Appears from the init phase onwards. Contains PII — MUST
+    NOT appear in on_discover or on_select responses. Includes the consent artifact
+    that records the scope, mechanism, and expiry of the traveller's consent to share
+    guest identity with the property.
+components:
+  schemas:
+    GuestManifest:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: draft
+      x-tags:
+      - hotel-booking
+      - ont
+      - pii
+      - consent
+      x-jsonld:
+        '@context': https://schema.beckn.io/GuestManifest/v0.1/context.jsonld
+        '@type': gm:GuestManifest
+      description: Per-room guest details shared with the confirmed provider under
+        explicit, purpose-bound consent. Appears from the init phase onwards. Contains
+        PII — MUST NOT appear in on_discover or on_select responses. Includes the
+        consent artifact that records the scope, mechanism, and expiry of the traveller's
+        consent to share guest identity with the property.
+      properties:
+        agentReference:
+          type: string
+          description: Agent or traveller's own booking reference — used as idempotency
+            key.
+        stay:
+          type: object
+          properties:
+            checkIn:
+              type: string
+              format: date
+            checkOut:
+              type: string
+              format: date
+            nights:
+              type: integer
+              minimum: 1
+          required:
+          - checkIn
+          - checkOut
+        rooms:
+          type: array
+          items:
+            type: object
+            properties:
+              roomSequence:
+                type: integer
+              guests:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    guestSequence:
+                      type: integer
+                    salutation:
+                      type: string
+                      enum:
+                      - Mr
+                      - Mrs
+                      - Ms
+                      - Miss
+                      - Dr
+                      - Prof
+                    firstName:
+                      type: string
+                    lastName:
+                      type: string
+                    guestType:
+                      type: string
+                      enum:
+                      - ADULT
+                      - CHILD
+                      - INFANT
+                    age:
+                      type: integer
+                      minimum: 0
+                      description: Required for CHILD and INFANT.
+                    isLeadGuest:
+                      type: boolean
+                    contact:
+                      type: object
+                      properties:
+                        phone:
+                          type: string
+                        email:
+                          type: string
+                          format: email
+                      description: Contact details — required for the lead guest only.
+                  required:
+                  - salutation
+                  - firstName
+                  - lastName
+                  - guestType
+                  - isLeadGuest
+            required:
+            - roomSequence
+            - guests
+          minItems: 1
+          description: Per-room guest list.
+        specialRequest:
+          type: string
+          description: Free-text special request (not guaranteed by the property).
+        specialRequestDisclaimer:
+          type: string
+          description: Standard disclaimer that special requests are subject to availability.
+        consentArtifact:
+          type: object
+          properties:
+            consentId:
+              type: string
+            subject:
+              type: string
+              description: Names of guests covered by this consent.
+            purpose:
+              type: string
+            scope:
+              type: array
+              items:
+                type: string
+            grantedAt:
+              type: string
+              format: date-time
+            expiresAt:
+              type: string
+              format: date-time
+            mechanism:
+              type: string
+              enum:
+              - EXPLICIT_CLICK_THROUGH
+              - OTP
+              - SIGNED_FORM
+            mediator:
+              type: string
+              description: Application or system that collected consent.
+          required:
+          - consentId
+          - purpose
+          - scope
+          - grantedAt
+          - mechanism
+          description: Purpose-bound consent artifact for sharing PII with the confirmed
+            provider.
+      required:
+      - agentReference
+      - stay
+      - rooms
+      - consentArtifact

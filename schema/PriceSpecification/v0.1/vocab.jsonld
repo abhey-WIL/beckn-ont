@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "ps": "https://schema.beckn.io/PriceSpecification#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "PriceSpecification": "ps:PriceSpecification"
+  },
+  "@graph": [
+    {
+      "@id": "ps:PriceSpecification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Price Specification",
+      "rdfs:comment": "Price and payment attributes carried in considerationAttributes across all booking phases. Covers the total price, per-n"
+    },
+    {
+      "@id": "ps:UPFRONT",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Upfront"
+    },
+    {
+      "@id": "ps:AT_PROPERTY",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "At Property"
+    },
+    {
+      "@id": "ps:INSTALMENT",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Instalment"
+    },
+    {
+      "@id": "ps:CREDIT_CARD",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Credit Card"
+    },
+    {
+      "@id": "ps:DEBIT_CARD",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Debit Card"
+    },
+    {
+      "@id": "ps:BANK_TRANSFER",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Bank Transfer"
+    },
+    {
+      "@id": "ps:PSP_TOKEN",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Psp Token"
+    },
+    {
+      "@id": "ps:WALLET",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Wallet"
+    },
+    {
+      "@id": "ps:HELD",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Held"
+    },
+    {
+      "@id": "ps:RELEASED_TO_SUPPLIER",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Released To Supplier"
+    },
+    {
+      "@id": "ps:RELEASED_TO_BOOKER",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Released To Booker"
+    },
+    {
+      "@id": "ps:DISPUTED",
+      "@type": "ps:PriceSpecification",
+      "rdfs:label": "Disputed"
+    }
+  ]
+}

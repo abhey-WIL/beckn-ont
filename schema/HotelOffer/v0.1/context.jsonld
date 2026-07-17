@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "ho": "https://schema.beckn.io/HotelOffer#",
+    "HotelOffer": "ho:HotelOffer",
+    "ratePlanCode": {
+      "@id": "ho:ratePlanCode"
+    },
+    "roomCategory": {
+      "@id": "ho:roomCategory"
+    },
+    "bedType": {
+      "@id": "ho:bedType"
+    },
+    "maxOccupancy": {
+      "@id": "ho:maxOccupancy"
+    },
+    "mealBasis": {
+      "@id": "ho:mealBasis"
+    },
+    "refundable": {
+      "@id": "ho:refundable"
+    },
+    "totalPrice": {
+      "@id": "ho:totalPrice"
+    },
+    "nightlyBreakup": {
+      "@id": "ho:nightlyBreakup"
+    },
+    "indicativeCancellationWindows": {
+      "@id": "ho:indicativeCancellationWindows"
+    },
+    "sessionIdentifier": {
+      "@id": "ho:sessionIdentifier"
+    },
+    "sessionExpiresAt": {
+      "@id": "ho:sessionExpiresAt"
+    }
+  }
+}

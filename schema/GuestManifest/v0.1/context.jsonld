@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "gm": "https://schema.beckn.io/GuestManifest#",
+    "GuestManifest": "gm:GuestManifest",
+    "agentReference": {
+      "@id": "gm:agentReference"
+    },
+    "stay": {
+      "@id": "gm:stay"
+    },
+    "rooms": {
+      "@id": "gm:rooms"
+    },
+    "specialRequest": {
+      "@id": "gm:specialRequest"
+    },
+    "specialRequestDisclaimer": {
+      "@id": "gm:specialRequestDisclaimer"
+    },
+    "consentArtifact": {
+      "@id": "gm:consentArtifact"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "cp": "https://schema.beckn.io/CancellationPolicy#",
+    "CancellationPolicy": "cp:CancellationPolicy",
+    "refundabilityText": {
+      "@id": "cp:refundabilityText"
+    },
+    "deadlineWindows": {
+      "@id": "cp:deadlineWindows"
+    },
+    "amendmentPolicy": {
+      "@id": "cp:amendmentPolicy"
+    },
+    "noShowPolicy": {
+      "@id": "cp:noShowPolicy"
+    },
+    "priceIntegrity": {
+      "@id": "cp:priceIntegrity"
+    },
+    "bookingAllowed": {
+      "@id": "cp:bookingAllowed"
+    },
+    "soldOut": {
+      "@id": "cp:soldOut"
+    },
+    "propertyCollectedFees": {
+      "@id": "cp:propertyCollectedFees"
+    },
+    "contractRemarks": {
+      "@id": "cp:contractRemarks"
+    },
+    "cancellationQuote": {
+      "@id": "cp:cancellationQuote"
+    }
+  }
+}

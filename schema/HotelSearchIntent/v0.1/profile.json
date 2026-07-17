@@ -1,0 +1,18 @@
+{
+  "id": "https://schema.beckn.io/HotelSearchIntent/v0.1",
+  "name": "HotelSearchIntent",
+  "version": "0.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HotelSearchIntent"
+  ],
+  "beckn_container": "contractAttributes",
+  "discovery_fields": [],
+  "indexable_paths": [],
+  "filterable_paths": [],
+  "sortable_paths": [],
+  "privacy_notes": [
+    "nationality and countryOfResidence are rate-eligibility parameters, not PII at this stage."
+  ]
+}

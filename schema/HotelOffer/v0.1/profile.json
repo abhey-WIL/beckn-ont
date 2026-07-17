@@ -1,0 +1,32 @@
+{
+  "id": "https://schema.beckn.io/HotelOffer/v0.1",
+  "name": "HotelOffer",
+  "version": "0.1.0",
+  "protocol_version": "2.0",
+  "semantic_model": "generalised",
+  "included_schemas": [
+    "HotelOffer"
+  ],
+  "beckn_container": "offerAttributes",
+  "discovery_fields": [
+    "roomCategory",
+    "mealBasis",
+    "refundable",
+    "totalPrice",
+    "nightlyBreakup"
+  ],
+  "indexable_paths": [
+    "roomCategory",
+    "mealBasis.code",
+    "refundable"
+  ],
+  "filterable_paths": [
+    "roomCategory",
+    "refundable",
+    "mealBasis.code"
+  ],
+  "sortable_paths": [
+    "totalPrice.amount"
+  ],
+  "privacy_notes": []
+}

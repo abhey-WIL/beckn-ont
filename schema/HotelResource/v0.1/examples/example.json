@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
+  "@type": "hr:HotelResource",
+  "hotelId": "GPH-PAR-001",
+  "staticId": "hotel-grand-paris-001",
+  "name": "Grand Paris Hotel",
+  "starRating": 4,
+  "address": {
+    "street": "15 Rue de Rivoli",
+    "city": "Paris",
+    "cityCode": "PAR",
+    "country": "France",
+    "countryCode": "FR",
+    "postalCode": "75001",
+    "latitude": 48.86,
+    "longitude": 2.348
+  },
+  "amenities": [
+    "Free WiFi",
+    "Swimming Pool",
+    "Spa",
+    "Restaurant",
+    "Bar",
+    "Gym"
+  ],
+  "images": [
+    {
+      "type": "THUMBNAIL",
+      "url": "https://media.example-ota.com/hotels/gph/thumb.jpg"
+    },
+    {
+      "type": "FULL",
+      "url": "https://media.example-ota.com/hotels/gph/main.jpg"
+    }
+  ],
+  "contact": {
+    "phone": "+33-1-4012-3456",
+    "email": "reservations@grandparishotel.example.com",
+    "website": "https://grandparishotel.example.com"
+  }
+}

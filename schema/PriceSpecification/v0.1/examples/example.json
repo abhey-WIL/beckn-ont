@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
+  "@type": "PriceSpecification",
+  "price": 500.0,
+  "priceCurrency": "EUR",
+  "description": "Total for 2 nights \u2014 Deluxe Family Room with Breakfast",
+  "valueAddedTaxIncluded": false,
+  "nightlyRate": 250.0,
+  "paymentSchedule": "UPFRONT",
+  "selectedPaymentMethod": "CREDIT_CARD",
+  "transactionRef": "pay-txn-ont-hb-a1b2c3d4-cc",
+  "paymentAuthorisation": {
+    "authCode": "AUTH-XYZ-20260715-0912",
+    "authProvider": "STRIPE_EU",
+    "authTimestamp": "2026-07-15T09:12:00Z",
+    "authAmount": 500.0,
+    "authCurrency": "EUR"
+  },
+  "settled": false,
+  "escrowStatus": "HELD",
+  "escrowReference": "finternet-escrow-ont-hb-a1b2c3d4"
+}

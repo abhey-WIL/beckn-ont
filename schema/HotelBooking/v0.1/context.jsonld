@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hb": "https://schema.beckn.io/HotelBooking#",
+    "HotelBooking": "hb:HotelBooking",
+    "bookingStatus": {
+      "@id": "hb:bookingStatus"
+    },
+    "bookingReference": {
+      "@id": "hb:bookingReference"
+    },
+    "agentReference": {
+      "@id": "hb:agentReference"
+    },
+    "bookingDate": {
+      "@id": "hb:bookingDate"
+    },
+    "cancellationDeadline": {
+      "@id": "hb:cancellationDeadline"
+    },
+    "cancellationPolicy": {
+      "@id": "hb:cancellationPolicy"
+    },
+    "confirmationNumbers": {
+      "@id": "hb:confirmationNumbers"
+    },
+    "escrowDetails": {
+      "@id": "hb:escrowDetails"
+    },
+    "stay": {
+      "@id": "hb:stay"
+    },
+    "property": {
+      "@id": "hb:property"
+    },
+    "rooms": {
+      "@id": "hb:rooms"
+    },
+    "totalGuests": {
+      "@id": "hb:totalGuests"
+    },
+    "totalAmount": {
+      "@id": "hb:totalAmount"
+    },
+    "contractRemarks": {
+      "@id": "hb:contractRemarks"
+    },
+    "cancellationDate": {
+      "@id": "hb:cancellationDate"
+    },
+    "cancellationConfirmationNumber": {
+      "@id": "hb:cancellationConfirmationNumber"
+    },
+    "cancellationCharge": {
+      "@id": "hb:cancellationCharge"
+    },
+    "refundAmount": {
+      "@id": "hb:refundAmount"
+    },
+    "refundTimeline": {
+      "@id": "hb:refundTimeline"
+    }
+  }
+}

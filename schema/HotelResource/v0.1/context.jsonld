@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "beckn": "https://schema.beckn.io/",
+    "hr": "https://schema.beckn.io/HotelResource#",
+    "HotelResource": "hr:HotelResource",
+    "hotelId": {
+      "@id": "hr:hotelId"
+    },
+    "staticId": {
+      "@id": "hr:staticId"
+    },
+    "name": {
+      "@id": "hr:name"
+    },
+    "starRating": {
+      "@id": "hr:starRating"
+    },
+    "address": {
+      "@id": "hr:address"
+    },
+    "amenities": {
+      "@id": "hr:amenities"
+    },
+    "images": {
+      "@id": "hr:images"
+    },
+    "contact": {
+      "@id": "hr:contact"
+    }
+  }
+}

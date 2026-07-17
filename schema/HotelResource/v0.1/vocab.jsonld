@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "hr": "https://schema.beckn.io/HotelResource#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "HotelResource": "hr:HotelResource"
+  },
+  "@graph": [
+    {
+      "@id": "hr:HotelResource",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Hotel Resource",
+      "rdfs:comment": "Static descriptive attributes for a hotel property resource on the ONT network. Published by the PN (OTRAMS) to the Cata"
+    }
+  ]
+}

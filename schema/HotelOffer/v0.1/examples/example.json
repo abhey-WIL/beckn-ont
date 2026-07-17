@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
+  "@type": "ho:HotelOffer",
+  "ratePlanCode": "GPH-DFR-BB-FLEX-2N",
+  "roomCategory": "Deluxe Family Room",
+  "bedType": "1 King Bed + 1 Sofa Bed",
+  "maxOccupancy": {
+    "adults": 2,
+    "children": 2
+  },
+  "mealBasis": {
+    "code": "BB",
+    "description": "Bed & Breakfast"
+  },
+  "refundable": true,
+  "totalPrice": {
+    "amount": 500.0,
+    "currency": "EUR"
+  },
+  "nightlyBreakup": [
+    {
+      "date": "2026-08-15",
+      "price": {
+        "amount": 250.0,
+        "currency": "EUR"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "price": {
+        "amount": 250.0,
+        "currency": "EUR"
+      }
+    }
+  ],
+  "indicativeCancellationWindows": [
+    {
+      "startDatetime": "2026-07-15T09:00:00Z",
+      "endDatetime": "2026-08-14T21:59:59Z",
+      "charge": {
+        "amount": 0.0,
+        "currency": "EUR"
+      },
+      "description": "Free cancellation"
+    }
+  ],
+  "sessionIdentifier": "sess-ont-hb-a1b2c3d4",
+  "sessionExpiresAt": "2026-07-15T09:20:00Z"
+}

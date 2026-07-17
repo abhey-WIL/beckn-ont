@@ -1,0 +1,155 @@
+openapi: 3.1.1
+$id: https://schema.beckn.io/HotelBooking/v0.1/attributes.yaml
+info:
+  title: HotelBooking
+  version: 0.1.0
+  description: Booking confirmation and lifecycle attributes carried in contractAttributes
+    from on_confirm onwards. Records the booking reference, status, stay recap, confirmation
+    numbers (network and property), escrow details, and the binding cancellation policy
+    attached at commitment. Also used in on_status and on_cancel to surface the current
+    authoritative booking state.
+components:
+  schemas:
+    HotelBooking:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: draft
+      x-tags:
+      - hotel-booking
+      - ont
+      - confirmation
+      x-jsonld:
+        '@context': https://schema.beckn.io/HotelBooking/v0.1/context.jsonld
+        '@type': hb:HotelBooking
+      description: Booking confirmation and lifecycle attributes carried in contractAttributes
+        from on_confirm onwards. Records the booking reference, status, stay recap,
+        confirmation numbers (network and property), escrow details, and the binding
+        cancellation policy attached at commitment. Also used in on_status and on_cancel
+        to surface the current authoritative booking state.
+      properties:
+        bookingStatus:
+          type: string
+          enum:
+          - VOUCHERED
+          - ON_REQUEST
+          - FAILED
+          - CANCELLED
+          - COMPLETED
+          description: Current status of the booking as reported by the provider platform.
+        bookingReference:
+          type: string
+          description: Network-level booking reference (unique across the ONT network).
+        agentReference:
+          type: string
+          description: Agent or traveller reference echoed back from the commit request.
+        bookingDate:
+          type: string
+          format: date
+          description: Date on which the booking was confirmed.
+        cancellationDeadline:
+          type: string
+          format: date-time
+          description: Last datetime for free cancellation (if applicable).
+        cancellationPolicy:
+          type: object
+          description: Binding cancellation policy attached at commitment (CancellationPolicy
+            attributes).
+        confirmationNumbers:
+          type: object
+          properties:
+            networkConfirmationNumber:
+              type: string
+            hotelConfirmationNumber:
+              type:
+              - string
+              - 'null'
+              description: Issued by the property; may arrive after initial confirmation.
+            note:
+              type: string
+          required:
+          - networkConfirmationNumber
+          description: Booking reference numbers from both the network and the property.
+        escrowDetails:
+          type: object
+          properties:
+            settlementRail:
+              type: string
+            escrowCondition:
+              type: string
+            fxApplicable:
+              type: boolean
+            settlementCurrency:
+              type: string
+            escrowReference:
+              type: string
+            escrowStatus:
+              type: string
+              enum:
+              - HELD
+              - RELEASED_TO_SUPPLIER
+              - RELEASED_TO_BOOKER
+              - DISPUTED
+          description: Finternet escrow binding for this booking.
+        stay:
+          type: object
+          properties:
+            checkIn:
+              type: string
+              format: date
+            checkOut:
+              type: string
+              format: date
+            nights:
+              type: integer
+        property:
+          type: object
+          properties:
+            hotelId:
+              type: string
+            name:
+              type: string
+            address:
+              type: string
+            phone:
+              type: string
+        rooms:
+          type: array
+          items:
+            type: object
+            properties:
+              roomCategory:
+                type: string
+              totalRooms:
+                type: integer
+        totalGuests:
+          type: object
+          properties:
+            adults:
+              type: integer
+            children:
+              type: integer
+        totalAmount: &id001
+          type: object
+          properties:
+            amount:
+              type: number
+            currency:
+              type: string
+              description: ISO 4217 currency code
+          required:
+          - amount
+          - currency
+        contractRemarks:
+          type: string
+        cancellationDate:
+          type: string
+          format: date
+        cancellationConfirmationNumber:
+          type: string
+        cancellationCharge: *id001
+        refundAmount: *id001
+        refundTimeline:
+          type: string
+      required:
+      - bookingStatus
+      - bookingReference

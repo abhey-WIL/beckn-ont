@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@import": "https://schema.beckn.io/core/v2/vocab.jsonld",
+    "ho": "https://schema.beckn.io/HotelOffer#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "HotelOffer": "ho:HotelOffer"
+  },
+  "@graph": [
+    {
+      "@id": "ho:HotelOffer",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Hotel Offer",
+      "rdfs:comment": "Offer-level attributes for a specific room-rate combination returned in hotel discovery and pre-commit responses. Carrie"
+    }
+  ]
+}

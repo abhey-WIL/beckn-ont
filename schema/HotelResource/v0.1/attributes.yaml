@@ -1,0 +1,109 @@
+openapi: 3.1.1
+$id: https://schema.beckn.io/HotelResource/v0.1/attributes.yaml
+info:
+  title: HotelResource
+  version: 0.1.0
+  description: Static descriptive attributes for a hotel property resource on the
+    ONT network. Published by the PN (OTRAMS) to the Catalog Service via catalog/publish
+    and returned in on_discover responses. Contains no PII and no availability data
+    — only stable, property-level content.
+components:
+  schemas:
+    HotelResource:
+      type: object
+      x-beckn-container: resourceAttributes
+      x-status: draft
+      x-tags:
+      - hotel-booking
+      - ont
+      - resource
+      x-jsonld:
+        '@context': https://schema.beckn.io/HotelResource/v0.1/context.jsonld
+        '@type': hr:HotelResource
+      description: Static descriptive attributes for a hotel property resource on
+        the ONT network. Published by the PN (OTRAMS) to the Catalog Service via catalog/publish
+        and returned in on_discover responses. Contains no PII and no availability
+        data — only stable, property-level content.
+      properties:
+        hotelId:
+          type: string
+          description: Provider-platform hotel identifier (e.g. OTRAMS hotel code).
+        staticId:
+          type: string
+          description: Stable network-level property identity, referenced across transactions.
+        name:
+          type: string
+          description: Display name of the property.
+        starRating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          description: Official star classification (1–5).
+        address:
+          type: object
+          description: Physical address of the property.
+          properties:
+            street:
+              type: string
+            city:
+              type: string
+            cityCode:
+              type: string
+              description: IATA/UNWTO city code.
+            country:
+              type: string
+            countryCode:
+              type: string
+              description: ISO 3166-1 alpha-2.
+            postalCode:
+              type: string
+            latitude:
+              type: number
+            longitude:
+              type: number
+          required:
+          - city
+          - cityCode
+          - country
+          - countryCode
+        amenities:
+          type: array
+          items:
+            type: string
+          description: Hotel-level amenity labels (e.g. Free WiFi, Swimming Pool).
+        images:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - THUMBNAIL
+                - FULL
+                - ROOM
+                - AMENITY
+              url:
+                type: string
+                format: uri
+            required:
+            - type
+            - url
+          description: Property images by type.
+        contact:
+          type: object
+          properties:
+            phone:
+              type: string
+            email:
+              type: string
+              format: email
+            website:
+              type: string
+              format: uri
+          description: Property contact details.
+      required:
+      - hotelId
+      - name
+      - starRating
+      - address

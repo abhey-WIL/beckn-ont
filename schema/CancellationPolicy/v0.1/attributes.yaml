@@ -1,0 +1,134 @@
+openapi: 3.1.1
+$id: https://schema.beckn.io/CancellationPolicy/v0.1/attributes.yaml
+info:
+  title: CancellationPolicy
+  version: 0.1.0
+  description: Binding cancellation policy for a confirmed or pre-commit hotel booking.
+    Returned in on_select (binding terms before commitment), on_init, on_confirm,
+    and on_cancel_quote (point-in-time charge preview). Includes deadline windows,
+    amendment and no-show terms, price-integrity result, and the booking-allowed /
+    sold-out signals required by the use case.
+components:
+  schemas:
+    CancellationPolicy:
+      type: object
+      x-beckn-container: contractAttributes
+      x-status: draft
+      x-tags:
+      - hotel-booking
+      - ont
+      - cancellation
+      x-jsonld:
+        '@context': https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld
+        '@type': cp:CancellationPolicy
+      description: Binding cancellation policy for a confirmed or pre-commit hotel
+        booking. Returned in on_select (binding terms before commitment), on_init,
+        on_confirm, and on_cancel_quote (point-in-time charge preview). Includes deadline
+        windows, amendment and no-show terms, price-integrity result, and the booking-allowed
+        / sold-out signals required by the use case.
+      properties:
+        refundabilityText:
+          type: string
+          description: Plain-language summary of the refund terms.
+        deadlineWindows:
+          type: array
+          items:
+            type: object
+            properties:
+              startDatetime:
+                type: string
+                format: date-time
+              endDatetime:
+                type: string
+                format: date-time
+              charge: &id001
+                type: object
+                properties:
+                  amount:
+                    type: number
+                  currency:
+                    type: string
+                    description: ISO 4217 currency code
+                required:
+                - amount
+                - currency
+              description:
+                type: string
+            required:
+            - startDatetime
+            - endDatetime
+            - charge
+          description: Binding cancellation charge windows with start, end, and charge.
+        amendmentPolicy:
+          type: string
+          description: Policy for date or occupancy amendments.
+        noShowPolicy:
+          type: string
+          description: Charge applied if the guest does not arrive.
+        priceIntegrity:
+          type: object
+          properties:
+            priceChanged:
+              type: boolean
+            previousPrice: *id001
+            currentPrice: *id001
+            priceDifference: *id001
+          required:
+          - priceChanged
+          - currentPrice
+          description: Price re-check result — confirms the offer price has not moved
+            since discovery.
+        bookingAllowed:
+          type: boolean
+          description: True if the room is still available and booking may proceed.
+        soldOut:
+          type: boolean
+          description: True if the room is no longer available.
+        propertyCollectedFees:
+          type: array
+          items:
+            type: object
+            properties:
+              description:
+                type: string
+              amount:
+                type: number
+              currency:
+                type: string
+              perPersonPerNight:
+                type: boolean
+              collectedBy:
+                type: string
+                enum:
+                - PROPERTY
+                - NETWORK
+            required:
+            - description
+            - collectedBy
+          description: Fees collected at the property (e.g. city tax) — disclosed
+            before commitment.
+        contractRemarks:
+          type: string
+          description: Additional terms or remarks from the property.
+        cancellationQuote:
+          type: object
+          properties:
+            quotedAt:
+              type: string
+              format: date-time
+            cancellationAllowed:
+              type: boolean
+            cancellationCharge: *id001
+            refundAmount: *id001
+            chargeDescription:
+              type: string
+            policyAnchor:
+              type: string
+          required:
+          - quotedAt
+          - cancellationAllowed
+          description: Point-in-time cancellation charge quote (present in on_cancel
+            with try=true).
+      required:
+      - deadlineWindows
+      - bookingAllowed

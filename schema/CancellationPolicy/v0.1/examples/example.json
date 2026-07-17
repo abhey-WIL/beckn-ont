@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
+  "@type": "cp:CancellationPolicy",
+  "refundabilityText": "Refundable \u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
+  "deadlineWindows": [
+    {
+      "startDatetime": "2026-07-15T09:00:00Z",
+      "endDatetime": "2026-08-14T21:59:59Z",
+      "charge": {
+        "amount": 0.0,
+        "currency": "EUR"
+      },
+      "description": "Free cancellation"
+    },
+    {
+      "startDatetime": "2026-08-15T00:00:00Z",
+      "endDatetime": "2026-08-17T12:00:00Z",
+      "charge": {
+        "amount": 500.0,
+        "currency": "EUR"
+      },
+      "description": "100% of total \u2014 non-refundable from check-in"
+    }
+  ],
+  "amendmentPolicy": "Date changes subject to rate-plan availability; rate difference applies.",
+  "noShowPolicy": "Full amount charged. No refund.",
+  "priceIntegrity": {
+    "priceChanged": false,
+    "previousPrice": {
+      "amount": 500.0,
+      "currency": "EUR"
+    },
+    "currentPrice": {
+      "amount": 500.0,
+      "currency": "EUR"
+    },
+    "priceDifference": {
+      "amount": 0.0,
+      "currency": "EUR"
+    }
+  },
+  "bookingAllowed": true,
+  "soldOut": false,
+  "propertyCollectedFees": [
+    {
+      "description": "City Tax (Taxe de s\u00e9jour)",
+      "amount": 3.5,
+      "currency": "EUR",
+      "perPersonPerNight": true,
+      "collectedBy": "PROPERTY"
+    }
+  ],
+  "contractRemarks": "City tax of EUR 3.50 per person per night payable at hotel upon check-in."
+}
