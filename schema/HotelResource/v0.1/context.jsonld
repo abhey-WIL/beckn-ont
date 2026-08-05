@@ -4,29 +4,38 @@
     "beckn": "https://schema.beckn.io/",
     "hr": "https://schema.beckn.io/HotelResource#",
     "HotelResource": "hr:HotelResource",
+    "name": {
+      "@id": "hr:name"
+    },
+    "roomCategory": {
+      "@id": "hr:roomCategory"
+    },
+    "bedType": {
+      "@id": "hr:bedType"
+    },
+    "maxOccupancy": {
+      "@id": "hr:maxOccupancy"
+    },
+    "roomAmenities": {
+      "@id": "hr:roomAmenities"
+    },
+    "images": {
+      "@id": "hr:images"
+    },
     "hotelId": {
       "@id": "hr:hotelId"
     },
     "staticId": {
       "@id": "hr:staticId"
     },
-    "name": {
-      "@id": "hr:name"
+    "hotelName": {
+      "@id": "hr:hotelName"
     },
     "starRating": {
       "@id": "hr:starRating"
     },
-    "address": {
-      "@id": "hr:address"
-    },
-    "amenities": {
-      "@id": "hr:amenities"
-    },
-    "images": {
-      "@id": "hr:images"
-    },
-    "contact": {
-      "@id": "hr:contact"
+    "hotelAmenities": {
+      "@id": "hr:hotelAmenities"
     }
   }
 }

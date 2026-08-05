@@ -1,41 +1,38 @@
 {
   "@context": "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
   "@type": "hr:HotelResource",
+  "roomCategory": "Deluxe Family Room",
+  "bedType": "1 King Bed + 1 Sofa Bed",
+  "maxOccupancy": {
+    "adults": 2,
+    "children": 2
+  },
+  "roomAmenities": [
+    "Free WiFi",
+    "Air Conditioning",
+    "Minibar",
+    "Safe",
+    "Flat-screen TV",
+    "Tea/Coffee Maker"
+  ],
+  "images": [
+    {
+      "type": "ROOM",
+      "url": "https://media.example-ota.com/hotels/gph/deluxe-family.jpg"
+    }
+  ],
   "hotelId": "GPH-PAR-001",
   "staticId": "hotel-grand-paris-001",
-  "name": "Grand Paris Hotel",
+  "hotelName": "Grand Paris Hotel",
   "starRating": 4,
-  "address": {
-    "street": "15 Rue de Rivoli",
-    "city": "Paris",
-    "cityCode": "PAR",
-    "country": "France",
-    "countryCode": "FR",
-    "postalCode": "75001",
-    "latitude": 48.86,
-    "longitude": 2.348
-  },
-  "amenities": [
+  "hotelAmenities": [
     "Free WiFi",
     "Swimming Pool",
     "Spa",
     "Restaurant",
     "Bar",
-    "Gym"
-  ],
-  "images": [
-    {
-      "type": "THUMBNAIL",
-      "url": "https://media.example-ota.com/hotels/gph/thumb.jpg"
-    },
-    {
-      "type": "FULL",
-      "url": "https://media.example-ota.com/hotels/gph/main.jpg"
-    }
-  ],
-  "contact": {
-    "phone": "+33-1-4012-3456",
-    "email": "reservations@grandparishotel.example.com",
-    "website": "https://grandparishotel.example.com"
-  }
+    "Gym",
+    "Concierge",
+    "24-hour Front Desk"
+  ]
 }

@@ -18,7 +18,7 @@
       "textSearch": "4-star or 5-star hotel in Paris for 2 adults and 1 child",
       "filters": {
         "type": "jsonpath",
-        "expression": "$.catalogs[*].resources[*] ? (@.resourceAttributes.address.countryCode == \"FR\" && @.resourceAttributes.address.cityCode == \"PAR\" && @.resourceAttributes.starRating >= 4)"
+        "expression": "$.catalogs[*].resources[*] ? (@.resourceAttributes.starRating >= 4)"
       }
     }
   }

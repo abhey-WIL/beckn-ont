@@ -1,0 +1,523 @@
+{
+  "context": {
+    "networkId": "nfh.global/testnet",
+    "action": "catalog/publish",
+    "version": "2.0.0",
+    "transactionId": "f7a9c1e2-3b4d-4a56-9c78-0d1e2f3a4b5c",
+    "messageId": "0a1b2c3d-4e5f-4678-9abc-def012345678",
+    "timestamp": "2026-07-18T11:00:00.000Z",
+    "bppId": "otrams-bpp.qtechsoftware.com",
+    "bppUri": "https://otrams-bpp.qtechsoftware.com/bpp/receiver",
+    "schemaContext": [
+      "https://schema.beckn.io/HotelResource/v0.2/context.jsonld",
+      "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld"
+    ]
+  },
+  "message": {
+    "publishDirectives": [
+      {
+        "catalogId": "cat-ont-otrams-dubai-001",
+        "catalogType": "REGULAR",
+        "visibleTo": [
+          "nfh.global/testnet"
+        ]
+      }
+    ],
+    "catalogs": [
+      {
+        "id": "cat-ont-otrams-dubai-001",
+        "schemaVersion": "v0.1",
+        "bppId": "otrams-bpp.qtechsoftware.com",
+        "bppUri": "https://otrams-bpp.qtechsoftware.com/bpp/receiver",
+        "descriptor": {
+          "name": "OTRAMS Dubai Hotel Catalog",
+          "shortDesc": "Dubai hotels available via OTRAMS — Qtech Software"
+        },
+        "provider": {
+          "id": "otrams-bpp.qtechsoftware.com",
+          "descriptor": {
+            "name": "OTRAMS — Qtech Software",
+            "shortDesc": "Global hotel distribution platform (~97% worldwide inventory)"
+          }
+        },
+        "resources": [
+          {
+            "id": "res-ont-hotel-cassells-albarsha-001",
+            "descriptor": {
+              "name": "Cassells Al Barsha Hotel",
+              "shortDesc": "4-star hotel — Sheikh Zayed Road, Al Barsha, Dubai",
+              "longDesc": "Cassells Al Barsha Hotel is conveniently located in the popular Al Barsha area, with hot tub, fitness center, sauna, outdoor pool and spa.",
+              "images": [
+                {
+                  "url": "https://media.qtechsoftware.com/hotels/ot000228787/thumb.jpg"
+                }
+              ]
+            },
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/HotelResource/v0.2/context.jsonld",
+              "@type": "hr:HotelResource",
+              "hotelId": "OT000228787",
+              "staticId": "hotel-cassells-albarsha-001",
+              "name": "Cassells Al Barsha Hotel",
+              "description": "Cassells Al Barsha Hotel is conveniently located in the popular Al Barsha area. The hotel offers a high standard of service and amenities to suit the individual needs of all travelers. Recreational facilities include hot tub, fitness center, sauna, outdoor pool and spa.",
+              "starRating": 4,
+              "address": {
+                "street": "Sheikh Zayed Road PO Box 114400",
+                "city": "Dubai",
+                "cityCode": "DXB",
+                "stateCode": "NA",
+                "country": "United Arab Emirates",
+                "countryCode": "AE",
+                "postalCode": "114400",
+                "latitude": 25.113475,
+                "longitude": 55.191621
+              },
+              "amenities": [
+                "Car Parking",
+                "Outdoor Pool",
+                "Fitness Center",
+                "Spa",
+                "Sauna",
+                "Hot Tub",
+                "24-hour Front Desk"
+              ],
+              "roomAmenities": [
+                "Hair Dryer",
+                "LCD/Plasma TV",
+                "Bathroom Phone",
+                "Complimentary Tea & Coffee",
+                "Air Conditioning"
+              ],
+              "images": [
+                {
+                  "type": "THUMBNAIL",
+                  "url": "https://media.qtechsoftware.com/hotels/ot000228787/thumb.jpg",
+                  "caption": "Hotel exterior"
+                },
+                {
+                  "type": "FULL",
+                  "url": "https://media.qtechsoftware.com/hotels/ot000228787/main.jpg",
+                  "caption": "Hotel exterior"
+                },
+                {
+                  "type": "AMENITY",
+                  "url": "https://media.qtechsoftware.com/hotels/ot000228787/pool.jpg",
+                  "caption": "Outdoor pool"
+                }
+              ],
+              "contact": {
+                "phone": "+971-4-000-0000",
+                "email": "reservations@cassellsalbarsha.example.com",
+                "website": "https://cassellsalbarsha.example.com"
+              },
+              "checkin": {
+                "time": "14:00",
+                "instructions": "Photo ID required at check-in. A tourism tax will be charged directly at the property."
+              },
+              "checkout": {
+                "time": "12:00"
+              },
+              "policies": {
+                "childPolicy": "Infant 0 year(s) stay for free if using existing bedding; a cot may carry an extra charge. Children 4-11 year(s) must use an extra bed. Guests over 11 years old are considered adults.",
+                "propertyCollectedFees": "Tourism Dirham Fee payable at the property, per room per night."
+              },
+              "rooms": [
+                {
+                  "roomId": "OT000228787-DLX",
+                  "roomCategory": "Deluxe Room",
+                  "bedType": "1 King Bed",
+                  "areaSqft": 320,
+                  "maxOccupancy": {
+                    "adults": 3,
+                    "children": 1
+                  },
+                  "roomAmenities": [
+                    "Free WiFi",
+                    "Air Conditioning",
+                    "Mini Fridge"
+                  ],
+                  "images": [
+                    {
+                      "type": "ROOM",
+                      "url": "https://media.qtechsoftware.com/hotels/ot000228787/deluxe.jpg",
+                      "caption": "Deluxe Room"
+                    }
+                  ]
+                },
+                {
+                  "roomId": "OT000228787-STD-TWN",
+                  "roomCategory": "Standard Room Twin Bed",
+                  "bedType": "2 Twin Beds",
+                  "areaSqft": 260,
+                  "maxOccupancy": {
+                    "adults": 2,
+                    "children": 1
+                  },
+                  "roomAmenities": [
+                    "Free WiFi",
+                    "Air Conditioning"
+                  ],
+                  "images": [
+                    {
+                      "type": "ROOM",
+                      "url": "https://media.qtechsoftware.com/hotels/ot000228787/std-twin.jpg",
+                      "caption": "Standard Room Twin Bed"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "res-ont-hotel-royaltulip-dubai-001",
+            "descriptor": {
+              "name": "Royal Tulip Hotel Dubai",
+              "shortDesc": "3-star hotel — Dubai",
+              "longDesc": "3-star hotel in Dubai offering comfortable deluxe and premium rooms.",
+              "images": [
+                {
+                  "url": "https://media.qtechsoftware.com/hotels/ot000556869/thumb.jpg"
+                }
+              ]
+            },
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/HotelResource/v0.2/context.jsonld",
+              "@type": "hr:HotelResource",
+              "hotelId": "OT000556869",
+              "staticId": "hotel-royaltulip-dubai-001",
+              "name": "Royal Tulip Hotel Dubai",
+              "description": "3-star hotel in Dubai offering comfortable deluxe and premium rooms.",
+              "starRating": 3,
+              "address": {
+                "street": "Al Rigga Road, Deira",
+                "city": "Dubai",
+                "cityCode": "DXB",
+                "country": "United Arab Emirates",
+                "countryCode": "AE",
+                "postalCode": "000000",
+                "latitude": 25.2795,
+                "longitude": 55.3049
+              },
+              "amenities": [
+                "Free WiFi",
+                "Restaurant",
+                "24-hour Front Desk"
+              ],
+              "images": [
+                {
+                  "type": "THUMBNAIL",
+                  "url": "https://media.qtechsoftware.com/hotels/ot000556869/thumb.jpg",
+                  "caption": "Hotel exterior"
+                }
+              ],
+              "contact": {
+                "phone": "+971-4-111-1111"
+              },
+              "checkin": {
+                "time": "14:00"
+              },
+              "checkout": {
+                "time": "12:00"
+              },
+              "rooms": [
+                {
+                  "roomId": "OT000556869-DLX",
+                  "roomCategory": "Deluxe Room",
+                  "bedType": "1 Queen Bed",
+                  "maxOccupancy": {
+                    "adults": 3,
+                    "children": 0
+                  }
+                },
+                {
+                  "roomId": "OT000556869-PRM",
+                  "roomCategory": "Premium Room",
+                  "bedType": "1 King Bed",
+                  "maxOccupancy": {
+                    "adults": 3,
+                    "children": 0
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "offers": [
+          {
+            "id": "offer-ont-cassells-stdtwn-ro-flex-001",
+            "resourceIds": [
+              "res-ont-hotel-cassells-albarsha-001"
+            ],
+            "descriptor": {
+              "name": "Standard Room Twin Bed — Room Only, Flexible",
+              "shortDesc": "2 twin beds · Room Only · free cancellation until deadline · Tourism Dirham Fee payable at property"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "OT000228787-STD-TWN-RO-FLEX",
+              "roomCategory": "Standard Room Twin Bed",
+              "bedType": "2 Twin Beds",
+              "maxOccupancy": {
+                "adults": 2,
+                "children": 1
+              },
+              "mealBasis": {
+                "code": "RO",
+                "description": "Room Only"
+              },
+              "refundable": true,
+              "totalPrice": {
+                "amount": 3856.6,
+                "currency": "INR"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 3856.6,
+                    "currency": "INR"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-18T11:00:00Z",
+                  "endDatetime": "2026-08-12T20:00:00Z",
+                  "charge": {
+                    "amount": 0.0,
+                    "currency": "INR"
+                  },
+                  "description": "Free cancellation"
+                },
+                {
+                  "startDatetime": "2026-08-12T20:00:01Z",
+                  "endDatetime": "2026-08-16T12:00:00Z",
+                  "charge": {
+                    "amount": 3856.6,
+                    "currency": "INR"
+                  },
+                  "description": "100% of total booking amount"
+                }
+              ],
+              "additionalInfo": "Surcharge excluded — Tourism Dirham Fee should be paid at checkout."
+            }
+          },
+          {
+            "id": "offer-ont-cassells-stdkng-ro-flex-001",
+            "resourceIds": [
+              "res-ont-hotel-cassells-albarsha-001"
+            ],
+            "descriptor": {
+              "name": "Standard Room King Bed — Room Only, Flexible",
+              "shortDesc": "1 king bed · Room Only · free cancellation until deadline · Tourism Fee payable at property"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "OT000228787-STD-KNG-RO-FLEX",
+              "roomCategory": "Standard Room King Bed",
+              "bedType": "1 King Bed",
+              "maxOccupancy": {
+                "adults": 2,
+                "children": 1
+              },
+              "mealBasis": {
+                "code": "RO",
+                "description": "Room Only"
+              },
+              "refundable": true,
+              "totalPrice": {
+                "amount": 3856.6,
+                "currency": "INR"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 3856.6,
+                    "currency": "INR"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-18T11:00:00Z",
+                  "endDatetime": "2026-08-12T20:00:00Z",
+                  "charge": {
+                    "amount": 0.0,
+                    "currency": "INR"
+                  },
+                  "description": "Free cancellation"
+                },
+                {
+                  "startDatetime": "2026-08-12T20:00:01Z",
+                  "endDatetime": "2026-08-16T12:00:00Z",
+                  "charge": {
+                    "amount": 3856.6,
+                    "currency": "INR"
+                  },
+                  "description": "100% of total booking amount"
+                }
+              ],
+              "additionalInfo": "Surcharge excluded — Tourism Fee should be paid at checkout."
+            }
+          },
+          {
+            "id": "offer-ont-royaltulip-dlx-ro-nr-1pax-001",
+            "resourceIds": [
+              "res-ont-hotel-royaltulip-dubai-001"
+            ],
+            "descriptor": {
+              "name": "Deluxe Room — Room Only, Non-Refundable (1 adult)",
+              "shortDesc": "Single occupancy · Room Only · promotional flash-sale rate · non-refundable"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "OT000556869-DLX-RO-NR-1PAX",
+              "roomCategory": "Deluxe Room (Promotional Rate)",
+              "bedType": "1 Queen Bed",
+              "maxOccupancy": {
+                "adults": 1,
+                "children": 0
+              },
+              "mealBasis": {
+                "code": "RO",
+                "description": "Room Only"
+              },
+              "refundable": false,
+              "totalPrice": {
+                "amount": 295.0,
+                "currency": "AED"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 295.0,
+                    "currency": "AED"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-18T11:00:00Z",
+                  "endDatetime": "2026-08-16T01:00:00Z",
+                  "charge": {
+                    "amount": 295.0,
+                    "currency": "AED"
+                  },
+                  "description": "Non-refundable — 100% charge from the moment of booking"
+                }
+              ],
+              "additionalInfo": "Promotion: Flash sale."
+            }
+          },
+          {
+            "id": "offer-ont-royaltulip-dlx-ro-nr-3pax-001",
+            "resourceIds": [
+              "res-ont-hotel-royaltulip-dubai-001"
+            ],
+            "descriptor": {
+              "name": "Deluxe Room — Room Only, Non-Refundable (3 adults)",
+              "shortDesc": "Triple occupancy · Room Only · promotional flash-sale rate · non-refundable"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "OT000556869-DLX-RO-NR-3PAX",
+              "roomCategory": "Deluxe Room (Promotional Rate)",
+              "bedType": "1 Queen Bed",
+              "maxOccupancy": {
+                "adults": 3,
+                "children": 0
+              },
+              "mealBasis": {
+                "code": "RO",
+                "description": "Room Only"
+              },
+              "refundable": false,
+              "totalPrice": {
+                "amount": 395.0,
+                "currency": "AED"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 395.0,
+                    "currency": "AED"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-18T11:00:00Z",
+                  "endDatetime": "2026-08-16T01:00:00Z",
+                  "charge": {
+                    "amount": 395.0,
+                    "currency": "AED"
+                  },
+                  "description": "Non-refundable — 100% charge from the moment of booking"
+                }
+              ],
+              "additionalInfo": "Promotion: Flash sale."
+            }
+          },
+          {
+            "id": "offer-ont-royaltulip-prm-ro-nr-3pax-001",
+            "resourceIds": [
+              "res-ont-hotel-royaltulip-dubai-001"
+            ],
+            "descriptor": {
+              "name": "Premium Room — Room Only, Non-Refundable (3 adults)",
+              "shortDesc": "Triple occupancy · Room Only · promotional flash-sale rate · non-refundable"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.beckn.io/HotelOffer/v0.2/context.jsonld",
+              "@type": "ho:HotelOffer",
+              "ratePlanCode": "OT000556869-PRM-RO-NR-3PAX",
+              "roomCategory": "Premium Room (Promotional Rate)",
+              "bedType": "1 King Bed",
+              "maxOccupancy": {
+                "adults": 3,
+                "children": 0
+              },
+              "mealBasis": {
+                "code": "RO",
+                "description": "Room Only"
+              },
+              "refundable": false,
+              "totalPrice": {
+                "amount": 495.0,
+                "currency": "AED"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 495.0,
+                    "currency": "AED"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-18T11:00:00Z",
+                  "endDatetime": "2026-08-16T01:00:00Z",
+                  "charge": {
+                    "amount": 495.0,
+                    "currency": "AED"
+                  },
+                  "description": "Non-refundable — 100% charge from the moment of booking"
+                }
+              ],
+              "additionalInfo": "Promotion: Flash sale."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

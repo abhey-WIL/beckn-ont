@@ -1,6 +1,6 @@
 {
   "schema": "HotelResource",
   "version": "0.1.0",
-  "card_template": "{{name}} \u00b7 {{starRating}}\u2605 \u00b7 {{address.city}}, {{address.countryCode}}",
-  "detail_template": "{{name}}\n{{address.street}}, {{address.city}} {{address.postalCode}}\nRating: {{starRating}}\u2605\nAmenities: {{amenities}}"
+  "card_template": "{{roomCategory}} · {{hotelName}} · {{starRating}}★ · {{bedType}}",
+  "detail_template": "{{roomCategory}} — {{bedType}}\n{{hotelName}} · {{starRating}}★\nRoom amenities: {{roomAmenities}}\nHotel amenities: {{hotelAmenities}}"
 }

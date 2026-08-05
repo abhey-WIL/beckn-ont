@@ -10,13 +10,14 @@
     "bppUri": "http://onix-bpp:8082/bpp/receiver",
     "schemaContext": [
       "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
-      "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld"
+      "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
+      "https://schema.beckn.io/Contact/2.0/context.jsonld"
     ]
   },
   "message": {
     "publishDirectives": [
       {
-        "catalogId": "cat-ont-otrams-paris-001",
+        "catalogId": "cat-ont-grandparis-001",
         "catalogType": "REGULAR",
         "visibleTo": [
           "nfh.global/testnet"
@@ -25,45 +26,93 @@
     ],
     "catalogs": [
       {
-        "id": "cat-ont-otrams-paris-001",
+        "id": "cat-ont-grandparis-001",
         "bppId": "bpp.example.com",
         "bppUri": "http://onix-bpp:8082/bpp/receiver",
         "descriptor": {
-          "name": "OTRAMS Paris Hotel Catalog",
-          "shortDesc": "Paris hotels available via OTRAMS \u2014 Qtech Software"
+          "name": "Grand Paris Hotel Catalog",
+          "shortDesc": "Hotel catalog for Grand Paris Hotel, Paris — via OTRAMS"
         },
         "provider": {
-          "id": "bpp.example.com",
+          "id": "hotel-grand-paris-001",
           "descriptor": {
-            "name": "OTRAMS \u2014 Qtech Software",
-            "shortDesc": "Global hotel distribution platform (~97% worldwide inventory)"
+            "name": "Grand Paris Hotel",
+            "shortDesc": "4-star hotel — 15 Rue de Rivoli, Paris 75001, France",
+            "thumbnailImage": "https://media.example-ota.com/hotels/gph/thumb.jpg",
+            "mediaFile": [
+              {
+                "label": "Hotel Thumbnail",
+                "mimeType": "image/jpeg",
+                "uri": "https://media.example-ota.com/hotels/gph/thumb.jpg"
+              },
+              {
+                "label": "Hotel Main Photo",
+                "mimeType": "image/jpeg",
+                "uri": "https://media.example-ota.com/hotels/gph/main.jpg"
+              }
+            ]
+          },
+          "availableAt": [
+            {
+              "geo": {
+                "type": "Point",
+                "coordinates": [
+                  2.348,
+                  48.86
+                ]
+              },
+              "address": {
+                "streetAddress": "15 Rue de Rivoli",
+                "addressLocality": "Paris",
+                "postalCode": "75001",
+                "addressCountry": "FR"
+              }
+            }
+          ],
+          "providerAttributes": {
+            "@context": "https://schema.beckn.io/Contact/2.0/context.jsonld",
+            "@type": "Contact",
+            "name": "Grand Paris Hotel",
+            "phone": "+33-1-4012-3456",
+            "email": "reservations@grandparishotel.example.com"
           }
         },
         "resources": [
           {
-            "id": "res-ont-hotel-grandparis-001",
+            "id": "res-ont-gph-deluxe-family-room",
             "descriptor": {
-              "name": "Grand Paris Hotel",
-              "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001"
+              "name": "Deluxe Family Room",
+              "shortDesc": "1 King Bed + 1 Sofa Bed · max 2 adults + 2 children"
             },
             "resourceAttributes": {
               "@context": "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
               "@type": "hr:HotelResource",
+              "name": "Deluxe Family Room",
+              "roomCategory": "Deluxe Family Room",
+              "bedType": "1 King Bed + 1 Sofa Bed",
+              "maxOccupancy": {
+                "adults": 2,
+                "children": 2
+              },
+              "roomAmenities": [
+                "Free WiFi",
+                "Air Conditioning",
+                "Minibar",
+                "Safe",
+                "Flat-screen TV",
+                "Tea/Coffee Maker"
+              ],
+              "images": [
+                {
+                  "type": "ROOM",
+                  "url": "https://media.example-ota.com/hotels/gph/deluxe-family.jpg"
+                }
+              ],
               "hotelId": "GPH-PAR-001",
               "staticId": "hotel-grand-paris-001",
-              "name": "Grand Paris Hotel",
+              "hotelName": "Grand Paris Hotel",
               "starRating": 4,
-              "address": {
-                "street": "15 Rue de Rivoli",
-                "city": "Paris",
-                "cityCode": "PAR",
-                "country": "France",
-                "countryCode": "FR",
-                "postalCode": "75001",
-                "latitude": 48.86,
-                "longitude": 2.348
-              },
-              "amenities": [
+              "hotelAmenities": [
                 "Free WiFi",
                 "Swimming Pool",
                 "Spa",
@@ -72,22 +121,7 @@
                 "Gym",
                 "Concierge",
                 "24-hour Front Desk"
-              ],
-              "images": [
-                {
-                  "type": "THUMBNAIL",
-                  "url": "https://media.example-ota.com/hotels/gph/thumb.jpg"
-                },
-                {
-                  "type": "FULL",
-                  "url": "https://media.example-ota.com/hotels/gph/main.jpg"
-                }
-              ],
-              "contact": {
-                "phone": "+33-1-4012-3456",
-                "email": "reservations@grandparishotel.example.com",
-                "website": "https://grandparishotel.example.com"
-              }
+              ]
             }
           }
         ],
@@ -95,11 +129,11 @@
           {
             "id": "offer-ont-gph-dfr-bb-flex-001",
             "resourceIds": [
-              "res-ont-hotel-grandparis-001"
+              "res-ont-gph-deluxe-family-room"
             ],
             "descriptor": {
-              "name": "Deluxe Family Room \u2014 B&B Flexible",
-              "shortDesc": "King bed + sofa bed \u00b7 B&B \u00b7 free cancellation until 14 Aug 2026"
+              "name": "Deluxe Family Room — B&B Flexible",
+              "shortDesc": "King bed + sofa bed · B&B · free cancellation until 14 Aug 2026"
             },
             "offerAttributes": {
               "@context": "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
@@ -115,49 +149,7 @@
                 "code": "BB",
                 "description": "Bed & Breakfast"
               },
-              "refundable": true,
-              "totalPrice": {
-                "amount": 500.0,
-                "currency": "EUR"
-              },
-              "nightlyBreakup": [
-                {
-                  "date": "2026-08-15",
-                  "price": {
-                    "amount": 250.0,
-                    "currency": "EUR"
-                  }
-                },
-                {
-                  "date": "2026-08-16",
-                  "price": {
-                    "amount": 250.0,
-                    "currency": "EUR"
-                  }
-                }
-              ],
-              "indicativeCancellationWindows": [
-                {
-                  "startDatetime": "2026-07-15T09:00:00Z",
-                  "endDatetime": "2026-08-14T21:59:59Z",
-                  "charge": {
-                    "amount": 0.0,
-                    "currency": "EUR"
-                  },
-                  "description": "Free cancellation"
-                },
-                {
-                  "startDatetime": "2026-08-15T00:00:00Z",
-                  "endDatetime": "2026-08-17T12:00:00Z",
-                  "charge": {
-                    "amount": 500.0,
-                    "currency": "EUR"
-                  },
-                  "description": "100% of total booking amount \u2014 non-refundable from check-in"
-                }
-              ],
-              "sessionIdentifier": "sess-ont-hb-a1b2c3d4",
-              "sessionExpiresAt": "2026-07-15T09:20:00Z"
+              "refundable": true
             }
           }
         ]

@@ -9,25 +9,31 @@
   ],
   "beckn_container": "resourceAttributes",
   "discovery_fields": [
-    "name",
+    "roomCategory",
+    "bedType",
+    "maxOccupancy",
+    "roomAmenities",
+    "images",
+    "hotelName",
     "starRating",
     "address",
-    "amenities",
-    "images"
+    "hotelAmenities"
   ],
   "indexable_paths": [
     "starRating",
-    "address.countryCode",
-    "address.cityCode"
+    "roomCategory",
+    "hotelId"
   ],
   "filterable_paths": [
     "starRating",
-    "address.countryCode",
-    "address.cityCode"
+    "roomCategory",
+    "maxOccupancy.adults",
+    "maxOccupancy.children"
   ],
   "sortable_paths": [
     "starRating",
-    "name"
+    "hotelName",
+    "roomCategory"
   ],
   "privacy_notes": []
 }

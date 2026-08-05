@@ -9,7 +9,10 @@
     "bapId": "bap.example.com",
     "bapUri": "http://onix-bap:8081/bap/receiver",
     "bppId": "bpp.example.com",
-    "bppUri": "http://onix-bpp:8082/bpp/receiver"
+    "bppUri": "http://onix-bpp:8082/bpp/receiver",
+    "schemaContext": [
+      "https://schema.beckn.io/Contact/2.0/context.jsonld"
+    ]
   },
   "message": {
     "contract": {
@@ -27,32 +30,43 @@
           },
           "resources": [
             {
-              "id": "res-ont-hotel-grandparis-001",
+              "id": "res-ont-gph-deluxe-family-room",
               "quantity": {
                 "count": 1
               },
               "descriptor": {
-                "name": "Grand Paris Hotel",
-                "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001"
+                "name": "Deluxe Family Room",
+                "shortDesc": "1 King Bed + 1 Sofa Bed · max 2 adults + 2 children"
               },
               "resourceAttributes": {
                 "@context": "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
                 "@type": "hr:HotelResource",
+                "name": "Deluxe Family Room",
+                "roomCategory": "Deluxe Family Room",
+                "bedType": "1 King Bed + 1 Sofa Bed",
+                "maxOccupancy": {
+                  "adults": 2,
+                  "children": 2
+                },
+                "roomAmenities": [
+                  "Free WiFi",
+                  "Air Conditioning",
+                  "Minibar",
+                  "Safe",
+                  "Flat-screen TV",
+                  "Tea/Coffee Maker"
+                ],
+                "images": [
+                  {
+                    "type": "ROOM",
+                    "url": "https://media.example-ota.com/hotels/gph/deluxe-family.jpg"
+                  }
+                ],
                 "hotelId": "GPH-PAR-001",
                 "staticId": "hotel-grand-paris-001",
-                "name": "Grand Paris Hotel",
+                "hotelName": "Grand Paris Hotel",
                 "starRating": 4,
-                "address": {
-                  "street": "15 Rue de Rivoli",
-                  "city": "Paris",
-                  "cityCode": "PAR",
-                  "country": "France",
-                  "countryCode": "FR",
-                  "postalCode": "75001",
-                  "latitude": 48.86,
-                  "longitude": 2.348
-                },
-                "amenities": [
+                "hotelAmenities": [
                   "Free WiFi",
                   "Swimming Pool",
                   "Spa",
@@ -61,16 +75,6 @@
                   "Gym",
                   "Concierge",
                   "24-hour Front Desk"
-                ],
-                "images": [
-                  {
-                    "type": "THUMBNAIL",
-                    "url": "https://media.example-ota.com/hotels/gph/thumb.jpg"
-                  },
-                  {
-                    "type": "FULL",
-                    "url": "https://media.example-ota.com/hotels/gph/main.jpg"
-                  }
                 ],
                 "contact": {
                   "phone": "+33-1-4012-3456",
@@ -83,10 +87,10 @@
           "offer": {
             "id": "offer-ont-gph-dfr-bb-flex-001",
             "resourceIds": [
-              "res-ont-hotel-grandparis-001"
+              "res-ont-gph-deluxe-family-room"
             ],
             "descriptor": {
-              "name": "Deluxe Family Room \u2014 B&B Flexible",
+              "name": "Deluxe Family Room — B&B Flexible",
               "shortDesc": "Deluxe Family Room with Breakfast, free cancellation until 14 Aug 2026"
             },
             "offerAttributes": {
@@ -141,7 +145,7 @@
                     "amount": 500.0,
                     "currency": "EUR"
                   },
-                  "description": "100% of total booking amount \u2014 non-refundable from check-in"
+                  "description": "100% of total booking amount — non-refundable from check-in"
                 }
               ],
               "sessionIdentifier": "sess-ont-hb-a1b2c3d4",
@@ -154,11 +158,11 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
-            "description": "Total for 2 nights \u2014 Deluxe Family Room with Breakfast",
+            "description": "Total for 2 nights — Deluxe Family Room with Breakfast",
             "valueAddedTaxIncluded": false,
             "nightlyRate": 250.0,
             "paymentSchedule": "UPFRONT",
@@ -178,20 +182,20 @@
           "role": "BOOKER",
           "descriptor": {
             "name": "Sarah Johnson",
-            "shortDesc": "Lead guest and booker \u2014 US national travelling to France"
+            "shortDesc": "Lead guest and booker — US national travelling to France"
           }
         },
         {
-          "id": "part-ont-hb-otrams-001",
+          "id": "hotel-grand-paris-001",
           "role": "PROVIDER",
           "descriptor": {
-            "name": "Grand Paris Hotel via OTRAMS",
-            "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001 \u2014 GPH-PAR-001"
+            "name": "Grand Paris Hotel",
+            "shortDesc": "4-star hotel — 15 Rue de Rivoli, Paris 75001"
           }
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
+        "@context": "https://schema.beckn.io/GuestManifest/v0.2/context.jsonld",
         "@type": "gm:GuestManifest",
         "agentReference": "REF-SJ-2026-0815-001",
         "stay": {
@@ -240,7 +244,7 @@
         "consentArtifact": {
           "consentId": "consent-ont-hb-sj-001",
           "subject": "Sarah Johnson, James Johnson, Emma Johnson (age 7)",
-          "purpose": "Fulfilment of hotel stay \u2014 Grand Paris Hotel, Paris, 15\u201317 Aug 2026",
+          "purpose": "Fulfilment of hotel stay — Grand Paris Hotel, Paris, 15–17 Aug 2026",
           "scope": [
             "GUEST_MANIFEST",
             "CONTACT_DETAILS"
@@ -248,12 +252,12 @@
           "grantedAt": "2026-07-15T09:05:00Z",
           "expiresAt": "2026-08-17T15:00:00Z",
           "mechanism": "EXPLICIT_CLICK_THROUGH",
-          "mediator": "CN Seeker App \u2014 cn.seeker.ont.example.com"
+          "mediator": "CN Seeker App — cn.seeker.ont.example.com"
         },
         "cancellationPolicy": {
-          "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
+          "@context": "https://schema.beckn.io/CancellationPolicy/v0.2/context.jsonld",
           "@type": "cp:CancellationPolicy",
-          "refundabilityText": "Refundable \u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
+          "refundabilityText": "Refundable — free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
           "deadlineWindows": [
             {
               "startDatetime": "2026-07-15T09:00:00Z",
@@ -271,7 +275,7 @@
                 "amount": 500.0,
                 "currency": "EUR"
               },
-              "description": "100% of total booking amount \u2014 non-refundable from check-in"
+              "description": "100% of total booking amount — non-refundable from check-in"
             }
           ],
           "amendmentPolicy": "Date changes subject to rate-plan availability; rate difference applies.",
@@ -295,7 +299,7 @@
           "soldOut": false,
           "propertyCollectedFees": [
             {
-              "description": "City Tax (Taxe de s\u00e9jour)",
+              "description": "City Tax (Taxe de séjour)",
               "amount": 3.5,
               "currency": "EUR",
               "perPersonPerNight": true,

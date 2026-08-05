@@ -27,7 +27,7 @@
           },
           "resources": [
             {
-              "id": "res-ont-hotel-grandparis-001",
+              "id": "res-ont-gph-deluxe-family-room",
               "quantity": {
                 "count": 1
               }
@@ -36,7 +36,7 @@
           "offer": {
             "id": "offer-ont-gph-dfr-bb-flex-001",
             "resourceIds": [
-              "res-ont-hotel-grandparis-001"
+              "res-ont-gph-deluxe-family-room"
             ]
           }
         }
@@ -45,7 +45,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -59,7 +59,7 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
+        "@context": "https://schema.beckn.io/HotelBooking/v0.2/context.jsonld",
         "@type": "hb:HotelBooking",
         "bookingStatus": "VOUCHERED",
         "bookingReference": "BK-ONT-2026-080123",

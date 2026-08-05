@@ -3,10 +3,11 @@ $id: https://schema.beckn.io/HotelOffer/v0.1/attributes.yaml
 info:
   title: HotelOffer
   version: 0.1.0
-  description: Offer-level attributes for a specific room-rate combination returned
-    in hotel discovery and pre-commit responses. Carries the rate plan, room category,
-    meal basis, refundability, total price with nightly breakup, indicative cancellation
-    windows, and the search-session binding that keeps the offer valid for 20 minutes.
+  description: Offer-level attributes for a specific room-rate combination. Used in
+    both static (catalog/publish, on_discover static) and dynamic (on_discover dynamic)
+    contexts. Static context carries rate plan, room category, meal basis, and refundability
+    only. Dynamic context additionally carries total price with nightly breakup, indicative
+    cancellation windows, and the search-session binding valid for 20 minutes.
 components:
   schemas:
     HotelOffer:
@@ -20,11 +21,11 @@ components:
       x-jsonld:
         '@context': https://schema.beckn.io/HotelOffer/v0.1/context.jsonld
         '@type': ho:HotelOffer
-      description: Offer-level attributes for a specific room-rate combination returned
-        in hotel discovery and pre-commit responses. Carries the rate plan, room category,
-        meal basis, refundability, total price with nightly breakup, indicative cancellation
-        windows, and the search-session binding that keeps the offer valid for 20
-        minutes.
+      description: Offer-level attributes for a specific room-rate combination. Static
+        fields (ratePlanCode, roomCategory, mealBasis, refundable) are always present.
+        Dynamic fields (totalPrice, nightlyBreakup, indicativeCancellationWindows,
+        sessionIdentifier, sessionExpiresAt) are present only in the dynamic on_discover
+        response from the BPP.
       properties:
         ratePlanCode:
           type: string
@@ -123,4 +124,3 @@ components:
       - roomCategory
       - mealBasis
       - refundable
-      - totalPrice

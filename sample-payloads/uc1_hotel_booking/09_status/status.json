@@ -24,7 +24,7 @@
           },
           "resources": [
             {
-              "id": "res-ont-hotel-grandparis-001",
+              "id": "res-ont-gph-deluxe-family-room",
               "quantity": {
                 "count": 1
               }
@@ -33,7 +33,7 @@
           "offer": {
             "id": "offer-ont-gph-dfr-bb-flex-001",
             "resourceIds": [
-              "res-ont-hotel-grandparis-001"
+              "res-ont-gph-deluxe-family-room"
             ]
           }
         }

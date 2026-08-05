@@ -15,7 +15,7 @@
     "contract": {
       "id": "contract-ont-hb-a1b2c3d4",
       "status": {
-        "code": "ACTIVE"
+        "code": "DRAFT"
       },
       "commitments": [
         {
@@ -27,7 +27,7 @@
           },
           "resources": [
             {
-              "id": "res-ont-hotel-grandparis-001",
+              "id": "res-ont-gph-deluxe-family-room",
               "quantity": {
                 "count": 1
               }
@@ -36,7 +36,7 @@
           "offer": {
             "id": "offer-ont-gph-dfr-bb-flex-001",
             "resourceIds": [
-              "res-ont-hotel-grandparis-001"
+              "res-ont-gph-deluxe-family-room"
             ]
           }
         }
@@ -45,7 +45,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -78,16 +78,16 @@
           }
         },
         {
-          "id": "part-ont-hb-otrams-001",
+          "id": "hotel-grand-paris-001",
           "role": "PROVIDER",
           "descriptor": {
-            "name": "Grand Paris Hotel via OTRAMS",
-            "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001 \u2014 GPH-PAR-001"
+            "name": "Grand Paris Hotel",
+            "shortDesc": "4-star hotel \u2014 15 Rue de Rivoli, Paris 75001"
           }
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
+        "@context": "https://schema.beckn.io/GuestManifest/v0.2/context.jsonld",
         "@type": "gm:GuestManifest",
         "agentReference": "REF-SJ-2026-0815-001",
         "stay": {
@@ -147,7 +147,7 @@
           "mediator": "CN Seeker App \u2014 cn.seeker.ont.example.com"
         },
         "cancellationPolicy": {
-          "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
+          "@context": "https://schema.beckn.io/CancellationPolicy/v0.2/context.jsonld",
           "@type": "cp:CancellationPolicy",
           "refundabilityText": "Refundable \u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
           "deadlineWindows": [

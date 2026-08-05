@@ -4,8 +4,8 @@
     "action": "on_discover",
     "version": "2.0.0",
     "transactionId": "a1b2c3d4-e5f6-4789-abcd-ef0123456789",
-    "messageId": "c3d4e5f6-0002-4012-8a00-ef5678901abc",
-    "timestamp": "2026-07-15T09:01:00.000Z",
+    "messageId": "c3d4e5f6-0003-4012-8a00-ef5678901abc",
+    "timestamp": "2026-07-15T09:02:00.000Z",
     "bapId": "bap.example.com",
     "bapUri": "http://onix-bap:8081/bap/receiver",
     "bppId": "bpp.example.com",
@@ -13,7 +13,8 @@
     "schemaContext": [
       "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
       "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
-      "https://schema.beckn.io/Contact/2.0/context.jsonld"
+      "https://schema.beckn.io/Contact/2.0/context.jsonld",
+      "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld"
     ]
   },
   "message": {
@@ -21,8 +22,8 @@
       {
         "id": "cat-ont-grandparis-001",
         "descriptor": {
-          "name": "Grand Paris Hotel Catalog",
-          "shortDesc": "Hotel catalog for Grand Paris Hotel, Paris — via OTRAMS"
+          "name": "Grand Paris Hotel — Available Rooms",
+          "shortDesc": "Rooms for 15–17 Aug 2026 · 2 adults · 1 child age 7"
         },
         "bppId": "bpp.example.com",
         "bppUri": "http://onix-bpp:8082/bpp/receiver",
@@ -49,10 +50,7 @@
             {
               "geo": {
                 "type": "Point",
-                "coordinates": [
-                  2.348,
-                  48.86
-                ]
+                "coordinates": [2.348, 48.86]
               },
               "address": {
                 "streetAddress": "15 Rue de Rivoli",
@@ -142,8 +140,64 @@
                 "code": "BB",
                 "description": "Bed & Breakfast"
               },
-              "refundable": true
-            }
+              "refundable": true,
+              "totalPrice": {
+                "amount": 500.0,
+                "currency": "EUR"
+              },
+              "nightlyBreakup": [
+                {
+                  "date": "2026-08-15",
+                  "price": {
+                    "amount": 250.0,
+                    "currency": "EUR"
+                  }
+                },
+                {
+                  "date": "2026-08-16",
+                  "price": {
+                    "amount": 250.0,
+                    "currency": "EUR"
+                  }
+                }
+              ],
+              "indicativeCancellationWindows": [
+                {
+                  "startDatetime": "2026-07-15T09:00:00Z",
+                  "endDatetime": "2026-08-14T21:59:59Z",
+                  "charge": {
+                    "amount": 0.0,
+                    "currency": "EUR"
+                  },
+                  "description": "Free cancellation"
+                },
+                {
+                  "startDatetime": "2026-08-15T00:00:00Z",
+                  "endDatetime": "2026-08-17T12:00:00Z",
+                  "charge": {
+                    "amount": 500.0,
+                    "currency": "EUR"
+                  },
+                  "description": "100% of total booking amount — non-refundable from check-in"
+                }
+              ],
+              "sessionIdentifier": "sess-ont-hb-a1b2c3d4",
+              "sessionExpiresAt": "2026-07-15T09:20:00Z"
+            },
+            "considerations": [
+              {
+                "id": "cons-ont-hb-room-001",
+                "considerationAttributes": {
+                  "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+                  "@type": "PriceSpecification",
+                  "price": 500.0,
+                  "priceCurrency": "EUR",
+                  "description": "Total for 2 nights — Deluxe Family Room with Breakfast",
+                  "valueAddedTaxIncluded": false,
+                  "nightlyRate": 250.0
+                }
+              }
+            ]
           }
         ]
       }
