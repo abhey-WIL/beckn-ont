@@ -34,8 +34,14 @@ components:
           - ON_REQUEST
           - FAILED
           - CANCELLED
+          - REJECTED
           - COMPLETED
           description: Current status of the booking as reported by the provider platform.
+            REJECTED indicates the supplier declined the booking after initial acceptance.
+        bookingId:
+          type: string
+          description: Provider-platform numeric booking identifier. Supports multi-key
+            retrieval alongside bookingReference and agentReference.
         bookingReference:
           type: string
           description: Network-level booking reference (unique across the ONT network).
@@ -108,6 +114,12 @@ components:
               type: string
             name:
               type: string
+            countryName:
+              type: string
+              description: Display name of the country where the property is located.
+            cityName:
+              type: string
+              description: Display name of the city where the property is located.
             address:
               type: string
             phone:
@@ -150,6 +162,54 @@ components:
         refundAmount: *id001
         refundTimeline:
           type: string
+        guestManifest:
+          type: object
+          description: Guest roster echoed at retrieval. Per-room guest list as submitted
+            at commit; present in the retrieval record to satisfy the complete booking
+            record requirement.
+          properties:
+            rooms:
+              type: array
+              items:
+                type: object
+                properties:
+                  roomSequence:
+                    type: integer
+                  roomTypeDescription:
+                    type: string
+                    description: Full room type description as returned by the provider platform.
+                  guests:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        salutation:
+                          type: string
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        guestType:
+                          type: string
+                          enum:
+                          - ADULT
+                          - CHILD
+                          - INFANT
+                        age:
+                          type: integer
+                          minimum: 0
+                          description: Required for CHILD and INFANT.
+                        isLeadGuest:
+                          type: boolean
+                      required:
+                      - salutation
+                      - firstName
+                      - lastName
+                      - guestType
+                      - isLeadGuest
+                required:
+                - roomSequence
+                - guests
       required:
       - bookingStatus
       - bookingReference

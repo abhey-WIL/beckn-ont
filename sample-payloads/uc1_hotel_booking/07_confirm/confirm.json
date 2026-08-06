@@ -45,7 +45,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -87,7 +87,7 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/GuestManifest/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
         "@type": "gm:GuestManifest",
         "agentReference": "REF-SJ-2026-0815-001",
         "stay": {
@@ -147,9 +147,9 @@
           "mediator": "CN Seeker App \u2014 cn.seeker.ont.example.com"
         },
         "cancellationPolicy": {
-          "@context": "https://schema.beckn.io/CancellationPolicy/v0.2/context.jsonld",
+          "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
           "@type": "cp:CancellationPolicy",
-          "refundabilityText": "Refundable \u2014 free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
+          "refundabilityText": "Refundable — free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
           "deadlineWindows": [
             {
               "startDatetime": "2026-07-15T09:00:00Z",
@@ -167,7 +167,7 @@
                 "amount": 500.0,
                 "currency": "EUR"
               },
-              "description": "100% of total booking amount \u2014 non-refundable from check-in"
+              "description": "100% of total booking amount — non-refundable from check-in"
             }
           ],
           "amendmentPolicy": "Date changes subject to rate-plan availability; rate difference applies.",
@@ -191,7 +191,7 @@
           "soldOut": false,
           "propertyCollectedFees": [
             {
-              "description": "City Tax (Taxe de s\u00e9jour)",
+              "description": "City Tax (Taxe de séjour)",
               "amount": 3.5,
               "currency": "EUR",
               "perPersonPerNight": true,

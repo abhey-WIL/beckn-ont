@@ -9,10 +9,7 @@
     "bapId": "bap.example.com",
     "bapUri": "http://onix-bap:8081/bap/receiver",
     "bppId": "bpp.example.com",
-    "bppUri": "http://onix-bpp:8082/bpp/receiver",
-    "schemaContext": [
-      "https://schema.beckn.io/Contact/2.0/context.jsonld"
-    ]
+    "bppUri": "http://onix-bpp:8082/bpp/receiver"
   },
   "message": {
     "contract": {
@@ -75,12 +72,7 @@
                   "Gym",
                   "Concierge",
                   "24-hour Front Desk"
-                ],
-                "contact": {
-                  "phone": "+33-1-4012-3456",
-                  "email": "reservations@grandparishotel.example.com",
-                  "website": "https://grandparishotel.example.com"
-                }
+                ]
               }
             }
           ],
@@ -158,7 +150,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -194,71 +186,42 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/GuestManifest/v0.2/context.jsonld",
-        "@type": "gm:GuestManifest",
+        "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
+        "@type": "hb:HotelBooking",
+        "bookingStatus": "VOUCHERED",
+        "bookingReference": "BK-ONT-2026-080123",
+        "bookingId": "OT-499261",
         "agentReference": "REF-SJ-2026-0815-001",
+        "bookingDate": "2026-07-15",
         "stay": {
           "checkIn": "2026-08-15",
           "checkOut": "2026-08-17",
           "nights": 2
         },
+        "property": {
+          "hotelId": "GPH-PAR-001",
+          "name": "Grand Paris Hotel",
+          "countryName": "France",
+          "cityName": "Paris",
+          "address": "15 Rue de Rivoli, Paris 75001"
+        },
         "rooms": [
           {
-            "roomSequence": 1,
-            "guests": [
-              {
-                "guestSequence": 1,
-                "salutation": "Ms",
-                "firstName": "Sarah",
-                "lastName": "Johnson",
-                "guestType": "ADULT",
-                "isLeadGuest": true,
-                "contact": {
-                  "phone": "+1-415-555-0198",
-                  "email": "sarah.johnson@example.com"
-                }
-              },
-              {
-                "guestSequence": 2,
-                "salutation": "Mr",
-                "firstName": "James",
-                "lastName": "Johnson",
-                "guestType": "ADULT",
-                "isLeadGuest": false
-              },
-              {
-                "guestSequence": 3,
-                "salutation": "Miss",
-                "firstName": "Emma",
-                "lastName": "Johnson",
-                "guestType": "CHILD",
-                "age": 7,
-                "isLeadGuest": false
-              }
-            ]
+            "roomCategory": "Deluxe Family Room",
+            "totalRooms": 1
           }
         ],
-        "specialRequest": "High-floor room preferred. Baby cot requested.",
-        "specialRequestDisclaimer": "Special requests are noted but cannot be guaranteed. Subject to availability at check-in.",
-        "consentArtifact": {
-          "consentId": "consent-ont-hb-sj-001",
-          "subject": "Sarah Johnson, James Johnson, Emma Johnson (age 7)",
-          "purpose": "Fulfilment of hotel stay — Grand Paris Hotel, Paris, 15–17 Aug 2026",
-          "scope": [
-            "GUEST_MANIFEST",
-            "CONTACT_DETAILS"
-          ],
-          "grantedAt": "2026-07-15T09:05:00Z",
-          "expiresAt": "2026-08-17T15:00:00Z",
-          "mechanism": "EXPLICIT_CLICK_THROUGH",
-          "mediator": "CN Seeker App — cn.seeker.ont.example.com"
+        "totalGuests": {
+          "adults": 2,
+          "children": 1
         },
-        "bookingStatus": "VOUCHERED",
-        "bookingReference": "BK-ONT-2026-080123",
-        "bookingDate": "2026-07-15",
+        "totalAmount": {
+          "amount": 500.0,
+          "currency": "EUR"
+        },
         "cancellationDeadline": "2026-08-14T21:59:59Z",
         "cancellationPolicy": {
-          "@context": "https://schema.beckn.io/CancellationPolicy/v0.2/context.jsonld",
+          "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
           "@type": "cp:CancellationPolicy",
           "refundabilityText": "Refundable — free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
           "deadlineWindows": [
@@ -314,13 +277,6 @@
         "confirmationNumbers": {
           "networkConfirmationNumber": "BK-ONT-2026-080123",
           "note": "Hotel confirmation number will be available via status retrieval after the property processes the reservation."
-        },
-        "escrowDetails": {
-          "settlementRail": "Finternet",
-          "escrowCondition": "Released to property upon verified check-out completion",
-          "fxApplicable": true,
-          "settlementCurrency": "EUR",
-          "escrowReference": "finternet-escrow-ont-hb-a1b2c3d4"
         },
         "contractRemarks": "City tax EUR 3.50 per person/night payable at property. Special requests noted but not guaranteed."
       }

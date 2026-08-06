@@ -46,7 +46,7 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelSearchIntent/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/HotelSearchIntent/v0.1/context.jsonld",
         "@type": "hsi:HotelSearchContext",
         "searchSession": {
           "id": "sess-ont-hb-a1b2c3d4",

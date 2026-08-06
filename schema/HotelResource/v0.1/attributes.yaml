@@ -4,10 +4,10 @@ info:
   title: HotelResource
   version: 0.1.0
   description: Room-level resource attributes for a hotel property on the ONT network.
-    Each resource represents one room type published by the PN (OTRAMS) via catalog/publish
-    and returned in on_discover responses. Hotel-level context (address, star rating,
-    amenities) is denormalized into each room resource for self-contained discoverability.
-    Contains no PII and no live availability data.
+    Each resource represents one room type published by the provider platform via
+    catalog/publish and returned in on_discover responses. Hotel-level context (address,
+    star rating, amenities) is denormalized into each room resource for self-contained
+    discoverability. Contains no PII and no live availability data.
 components:
   schemas:
     HotelResource:
@@ -34,6 +34,9 @@ components:
         bedType:
           type: string
           description: Bed configuration in the room (e.g. 1 King Bed + 1 Sofa Bed).
+            Some supplier systems embed this in a combined room-type string rather than
+            returning it as a standalone field; the adapter is responsible for extracting
+            or deriving it. Include when available.
         maxOccupancy:
           type: object
           description: Maximum number of guests the room can accommodate.
@@ -71,7 +74,9 @@ components:
           description: Room images by type.
         hotelId:
           type: string
-          description: Provider-platform hotel identifier (e.g. OTRAMS hotel code).
+          description: Stable provider-platform property identifier. Use the supplier's
+            permanent property code, not any session-scoped token — session-scoped
+            identifiers are BPP-internal and must not appear in Beckn payloads.
         staticId:
           type: string
           description: Stable network-level property identity, referenced across transactions.
@@ -91,6 +96,5 @@ components:
       required:
       - name
       - roomCategory
-      - bedType
       - hotelId
       - starRating

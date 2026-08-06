@@ -14,7 +14,7 @@
       "https://schema.beckn.io/HotelResource/v0.1/context.jsonld",
       "https://schema.beckn.io/HotelOffer/v0.1/context.jsonld",
       "https://schema.beckn.io/Contact/2.0/context.jsonld",
-      "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld"
+      "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld"
     ]
   },
   "message": {
@@ -32,6 +32,7 @@
           "descriptor": {
             "name": "Grand Paris Hotel",
             "shortDesc": "4-star hotel — 15 Rue de Rivoli, Paris 75001, France",
+            "longDesc": "4-star property in the heart of Paris, steps from the Louvre and the Seine. Features a rooftop restaurant, spa, outdoor pool, and fully equipped fitness centre. All rooms offer city or courtyard views with complimentary high-speed WiFi.",
             "thumbnailImage": "https://media.example-ota.com/hotels/gph/thumb.jpg",
             "mediaFile": [
               {
@@ -50,7 +51,10 @@
             {
               "geo": {
                 "type": "Point",
-                "coordinates": [2.348, 48.86]
+                "coordinates": [
+                  2.348,
+                  48.86
+                ]
               },
               "address": {
                 "streetAddress": "15 Rue de Rivoli",
@@ -188,7 +192,7 @@
               {
                 "id": "cons-ont-hb-room-001",
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+                  "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
                   "@type": "PriceSpecification",
                   "price": 500.0,
                   "priceCurrency": "EUR",

@@ -45,11 +45,11 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
-            "description": "Total for 2 nights \u2014 Deluxe Family Room with Breakfast",
+            "description": "Total for 2 nights — Deluxe Family Room with Breakfast",
             "valueAddedTaxIncluded": false,
             "nightlyRate": 250.0
           },
@@ -59,10 +59,11 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelBooking/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
         "@type": "hb:HotelBooking",
         "bookingStatus": "VOUCHERED",
         "bookingReference": "BK-ONT-2026-080123",
+        "bookingId": "OT-499261",
         "agentReference": "REF-SJ-2026-0815-001",
         "stay": {
           "checkIn": "2026-08-15",
@@ -73,7 +74,9 @@
           "hotelId": "GPH-PAR-001",
           "name": "Grand Paris Hotel",
           "address": "15 Rue de Rivoli, Paris 75001, France",
-          "phone": "+33-1-4012-3456"
+          "phone": "+33-1-4012-3456",
+          "countryName": "France",
+          "cityName": "Paris"
         },
         "rooms": [
           {
@@ -95,8 +98,38 @@
           "networkConfirmationNumber": "BK-ONT-2026-080123",
           "hotelConfirmationNumber": "GPH-RES-20260715-4821"
         },
-        "escrowStatus": "HELD",
-        "escrowReference": "finternet-escrow-ont-hb-a1b2c3d4"
+        "guestManifest": {
+          "rooms": [
+            {
+              "roomSequence": 1,
+              "roomTypeDescription": "Deluxe Family Room — Bed & Breakfast : 2 adults, 1 child",
+              "guests": [
+                {
+                  "salutation": "Ms",
+                  "firstName": "Sarah",
+                  "lastName": "Johnson",
+                  "guestType": "ADULT",
+                  "isLeadGuest": true
+                },
+                {
+                  "salutation": "Mr",
+                  "firstName": "James",
+                  "lastName": "Johnson",
+                  "guestType": "ADULT",
+                  "isLeadGuest": false
+                },
+                {
+                  "salutation": "Miss",
+                  "firstName": "Emma",
+                  "lastName": "Johnson",
+                  "guestType": "CHILD",
+                  "age": 7,
+                  "isLeadGuest": false
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   }

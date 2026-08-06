@@ -45,7 +45,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -79,7 +79,7 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/GuestManifest/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/GuestManifest/v0.1/context.jsonld",
         "@type": "gm:GuestManifest",
         "agentReference": "REF-SJ-2026-0815-001",
         "stay": {
@@ -128,7 +128,7 @@
         "consentArtifact": {
           "consentId": "consent-ont-hb-sj-001",
           "subject": "Sarah Johnson, James Johnson, Emma Johnson (age 7)",
-          "purpose": "Fulfilment of hotel stay \u2014 Grand Paris Hotel, Paris, 15\u201317 Aug 2026",
+          "purpose": "Fulfilment of hotel stay — Grand Paris Hotel, Paris, 15–17 Aug 2026",
           "scope": [
             "GUEST_MANIFEST",
             "CONTACT_DETAILS"
@@ -136,7 +136,7 @@
           "grantedAt": "2026-07-15T09:05:00Z",
           "expiresAt": "2026-08-17T15:00:00Z",
           "mechanism": "EXPLICIT_CLICK_THROUGH",
-          "mediator": "CN Seeker App \u2014 cn.seeker.ont.example.com"
+          "mediator": "CN Seeker App — cn.seeker.ont.example.com"
         }
       }
     }

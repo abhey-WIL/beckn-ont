@@ -38,6 +38,7 @@
           "descriptor": {
             "name": "Grand Paris Hotel",
             "shortDesc": "4-star hotel — 15 Rue de Rivoli, Paris 75001, France",
+            "longDesc": "4-star property in the heart of Paris, steps from the Louvre and the Seine. Features a rooftop restaurant, spa, outdoor pool, and fully equipped fitness centre. All rooms offer city or courtyard views with complimentary high-speed WiFi.",
             "thumbnailImage": "https://media.example-ota.com/hotels/gph/thumb.jpg",
             "mediaFile": [
               {

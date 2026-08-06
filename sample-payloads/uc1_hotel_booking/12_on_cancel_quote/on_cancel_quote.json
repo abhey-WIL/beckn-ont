@@ -43,9 +43,10 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelBooking/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
         "@type": "hb:HotelBooking",
         "bookingReference": "BK-ONT-2026-080123",
+        "bookingId": "OT-499261",
         "cancellationQuote": {
           "quotedAt": "2026-07-28T14:30:15.000Z",
           "cancellationAllowed": true,
@@ -57,7 +58,7 @@
             "amount": 500.0,
             "currency": "EUR"
           },
-          "chargeDescription": "Free cancellation \u2014 within free-cancellation window (before 14 Aug 2026 23:59 Paris time)",
+          "chargeDescription": "Free cancellation — within free-cancellation window (before 14 Aug 2026 23:59 Paris time)",
           "policyAnchor": "Binding policy from booking BK-ONT-2026-080123"
         }
       }

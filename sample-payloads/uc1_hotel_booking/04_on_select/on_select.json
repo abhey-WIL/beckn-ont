@@ -75,12 +75,7 @@
                   "Gym",
                   "Concierge",
                   "24-hour Front Desk"
-                ],
-                "contact": {
-                  "phone": "+33-1-4012-3456",
-                  "email": "reservations@grandparishotel.example.com",
-                  "website": "https://grandparishotel.example.com"
-                }
+                ]
               }
             }
           ],
@@ -158,7 +153,7 @@
         {
           "id": "cons-ont-hb-room-001",
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -183,7 +178,7 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/CancellationPolicy/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/CancellationPolicy/v0.1/context.jsonld",
         "@type": "cp:CancellationPolicy",
         "refundabilityText": "Refundable — free cancellation until 23:59 on 14 August 2026 (Paris local time). Non-refundable from check-in date.",
         "deadlineWindows": [

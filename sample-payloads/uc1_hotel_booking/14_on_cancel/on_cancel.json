@@ -49,7 +49,7 @@
             "code": "SETTLED"
           },
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/PriceSpecification/v0.2/context.jsonld",
+            "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
             "price": 500.0,
             "priceCurrency": "EUR",
@@ -61,16 +61,17 @@
               "amount": 500.0,
               "currency": "EUR"
             },
-            "refundTimeline": "5\u20137 business days",
-            "description": "Full refund \u2014 within free-cancellation window"
+            "refundTimeline": "5–7 business days",
+            "description": "Full refund — within free-cancellation window"
           }
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelBooking/v0.2/context.jsonld",
+        "@context": "https://schema.beckn.io/HotelBooking/v0.1/context.jsonld",
         "@type": "hb:HotelBooking",
         "bookingStatus": "CANCELLED",
         "bookingReference": "BK-ONT-2026-080123",
+        "bookingId": "OT-499261",
         "agentReference": "REF-SJ-2026-0815-001",
         "cancellationDate": "2026-07-28",
         "cancellationConfirmationNumber": "CANC-ONT-2026-080123",
@@ -82,9 +83,7 @@
           "amount": 500.0,
           "currency": "EUR"
         },
-        "refundTimeline": "5\u20137 business days to original payment method",
-        "escrowStatus": "RELEASED_TO_BOOKER",
-        "escrowReference": "finternet-escrow-ont-hb-a1b2c3d4"
+        "refundTimeline": "5–7 business days to original payment method"
       }
     }
   }
