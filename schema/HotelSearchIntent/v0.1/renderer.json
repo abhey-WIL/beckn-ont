@@ -1,6 +1,0 @@
-{
-  "schema": "HotelSearchIntent",
-  "version": "0.1.0",
-  "card_template": "Session {{searchSession.id}} \u00b7 {{stay.checkIn}} \u2013 {{stay.checkOut}} \u00b7 {{currency}}",
-  "detail_template": "Stay: {{stay.checkIn}} \u2013 {{stay.checkOut}} ({{stay.nights}} nights)\nCurrency: {{currency}}\nSession expires: {{searchSession.expiresAt}}"
-}

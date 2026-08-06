@@ -155,17 +155,10 @@
           "considerationAttributes": {
             "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
-            "price": 500.0,
-            "priceCurrency": "EUR",
+            "value": 500.0,
+            "currency": "EUR",
             "description": "Total for 2 nights — Deluxe Family Room with Breakfast",
-            "valueAddedTaxIncluded": false,
-            "nightlyRate": 250.0,
-            "paymentSchedule": "UPFRONT",
-            "acceptedPaymentMethods": [
-              "CREDIT_CARD",
-              "BANK_TRANSFER",
-              "PSP_TOKEN"
-            ]
+            "valueAddedTaxIncluded": false
           },
           "status": {
             "code": "PENDING"
@@ -229,11 +222,7 @@
             "collectedBy": "PROPERTY"
           }
         ],
-        "contractRemarks": "City tax of EUR 3.50 per person per night is payable directly at the hotel upon check-in. Valid photo ID required at check-in.",
-        "searchSession": {
-          "id": "sess-ont-hb-a1b2c3d4",
-          "expiresAt": "2026-07-15T09:20:00Z"
-        }
+        "contractRemarks": "City tax of EUR 3.50 per person per night is payable directly at the hotel upon check-in. Valid photo ID required at check-in."
       }
     }
   }

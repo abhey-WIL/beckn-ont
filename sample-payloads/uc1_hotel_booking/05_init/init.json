@@ -47,13 +47,10 @@
           "considerationAttributes": {
             "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
-            "price": 500.0,
-            "priceCurrency": "EUR",
+            "value": 500.0,
+            "currency": "EUR",
             "description": "Total for 2 nights \u2014 Deluxe Family Room with Breakfast",
-            "valueAddedTaxIncluded": false,
-            "nightlyRate": 250.0,
-            "paymentSchedule": "UPFRONT",
-            "selectedPaymentMethod": "CREDIT_CARD"
+            "valueAddedTaxIncluded": false
           },
           "status": {
             "code": "PENDING"

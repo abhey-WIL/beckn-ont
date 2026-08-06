@@ -44,38 +44,7 @@
         {
           "id": "part-ont-hb-traveller-001"
         }
-      ],
-      "contractAttributes": {
-        "@context": "https://schema.beckn.io/HotelSearchIntent/v0.1/context.jsonld",
-        "@type": "hsi:HotelSearchContext",
-        "searchSession": {
-          "id": "sess-ont-hb-a1b2c3d4",
-          "expiresAt": "2026-07-15T09:20:00Z"
-        },
-        "stay": {
-          "checkIn": "2026-08-15",
-          "checkOut": "2026-08-17",
-          "nights": 2
-        },
-        "rooms": [
-          {
-            "adults": 2,
-            "children": 1,
-            "childAges": [
-              7
-            ]
-          }
-        ],
-        "nationality": {
-          "code": "US",
-          "name": "United States"
-        },
-        "countryOfResidence": {
-          "code": "US",
-          "name": "United States"
-        },
-        "currency": "EUR"
-      }
+      ]
     }
   }
 }

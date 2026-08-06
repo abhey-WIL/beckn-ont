@@ -51,8 +51,8 @@
           "considerationAttributes": {
             "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
-            "price": 500.0,
-            "priceCurrency": "EUR",
+            "value": 500.0,
+            "currency": "EUR",
             "cancellationCharge": {
               "amount": 0.0,
               "currency": "EUR"

@@ -155,16 +155,10 @@
           "considerationAttributes": {
             "@context": "https://schema.beckn.io/PriceSpecification/v0.1/context.jsonld",
             "@type": "PriceSpecification",
-            "price": 500.0,
-            "priceCurrency": "EUR",
+            "value": 500.0,
+            "currency": "EUR",
             "description": "Total for 2 nights — Deluxe Family Room with Breakfast",
-            "valueAddedTaxIncluded": false,
-            "nightlyRate": 250.0,
-            "paymentSchedule": "UPFRONT",
-            "selectedPaymentMethod": "CREDIT_CARD",
-            "paymentGatewayUrl": "https://pay.example-psp.com/checkout/ont-hb-a1b2c3d4",
-            "paymentReference": "pay-intent-ont-hb-a1b2c3d4",
-            "paymentDeadline": "2026-07-15T09:25:00Z"
+            "valueAddedTaxIncluded": false
           },
           "status": {
             "code": "QUOTED"
